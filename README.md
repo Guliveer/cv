@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dynamic CV
+
+This project is a scalable CV/Resume application built with **Next.js**, **Sanity**, **Tailwind CSS**, and **shadcn/ui**.
+It allows users to dynamically and easily generate a CV with customizable themes, fonts, and content.
+
+---
+
+## Features
+- **Customizable Theme**: Easily modify colors, fonts, and styles.
+- **Sanity Integration**: Fetches data dynamically from a Sanity dataset.
+- **Responsive Design**: Optimized for all devices.
+- **Print-Ready**: Includes styles for printing the CV.
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Guliveer/cv.git
+cd cv
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+Run the following command to install all required dependencies:
+```bash
+cd website
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Set Up Sanity
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Install Sanity CLI**:
+   ```bash
+   npm install -g @sanity/cli
+   ```
 
-## Learn More
+2. **Create Sanity Studio**:
+   - Visit [Sanity](https://www.sanity.io/) and create a new project
+   - Copy the project ID and dataset name.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Update Configuration**:
+    - Open [sanity/config.ts](./sanity/config.ts) and [website/config.json](./website/config.json).
+    - Replace the `projectId` and `dataset` values with your Sanity project details:
+      ```typescript
+      export const config = {
+        projectId: "your-project-id",
+        dataset: "your-dataset-name"
+      }
+      ```
+4. **Further configuration**:
+   - In [website/config.json](./website/config.json) you can also edit fields like:
+     - `technologyBlacklist` to exclude specific technologies from being displayed.
+     - `showStargazersCount` to show or hide the stargazers count on GitHub repo.
+     - `sortProjects` ("name", "stars") to sort projects by ***name*** or ***Stargazers count*** (if enabled).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Deploy Sanity Studio**:
+   ```bash
+   sanity deploy
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Start the Development Server
+Navigate back to the [website](./website) directory and start the server:
+```bash
+cd ../website
+npm run dev
+```
+(You can run Sanity Studio locally by running the same command in the [sanity](./sanity) directory)
 
-## Deploy on Vercel
+The application will be available by default at `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+### 1. **Edit Theme**
+Modify the theme colors in [website/src/styles/theme.css](./website/src/styles/theme.css)  
+To do so, you can visit one of the listed websites there to generate a color palette
+
+### 2. **Change Fonts**
+Update the `fontFamily` in [website/tailwind.config.ts](./website/tailwind.config.ts)  
+I recommend using [realtimecolors.com](https://real-time-colors.com/) for that purpose.
+```typescript
+fontFamily: {
+    heading: 'Your Custom Font For Headings',
+    body: 'Your Custom Font For Everything Else',
+}
+```
+Ensure the font is imported in [theme.css](./website/src/styles/theme.css):
+```css
+@import url('https://fonts.googleapis.com/css2?family=Your+Font&display=swap');
+```
+
+### 3. **Modify Content**
+Update the content fetched from Sanity by visiting your Studio
+
+---
+
+Made with ❤️ by [Oliwer Pawelski](https://github.com/Guliveer)

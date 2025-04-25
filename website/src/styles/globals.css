@@ -1,0 +1,57 @@
+@import "./theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Improve font rendering */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground font-body text-base font-normal;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading font-bold cursor-default;
+    }
+}
+
+/* Print styles */
+@media print {
+    @page {
+        margin: 1.5cm;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .shadow-lg,
+    .shadow-md,
+    .shadow-xl {
+        box-shadow: none !important;
+    }
+
+    .border-none {
+        border: 1px solid #eaeaea !important;
+    }
+}

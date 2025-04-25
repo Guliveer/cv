@@ -1,0 +1,17 @@
+{
+    "sanity": {
+        "projectId": "083omu2x",
+        "dataset": "production"
+    },
+
+    "technologyBlacklist": [
+        "CMake",
+        "CSS",
+        "PowerShell",
+        "Shell",
+        "Batchfile",
+        "HTML"
+    ],
+    "showStargazersCount": true,
+    "sortProjects": "name"
+}
