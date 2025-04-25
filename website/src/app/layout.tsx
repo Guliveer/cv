@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Analytics } from '@vercel/analytics/next'
 import "@/styles/globals.css"
 import { ThemeProvider } from "@/components/ThemeProvider"
 import { getProfile } from "@/lib/queries";
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
         "Portfolio",
         "Next.js",
         "Sanity",
+        "CMS",
         "Tailwind CSS",
-        "shadcn/ui",
+        "shadcn",
         "React",
         "TypeScript",
     ],
@@ -41,6 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <body>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     {children}
+                    <Analytics />
                 </ThemeProvider>
             </body>
         </html>
