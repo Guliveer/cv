@@ -6,6 +6,7 @@ import SectionHeader from "./SectionHeader"
 import { getProjects } from "@/lib/queries"
 import { enrichProjects } from "@/lib/utils"
 import cfg from "@/../config.json"
+import {Skeleton} from "@/components/ui/skeleton";
 
 // Cache object
 const projectsCache: { data: any[]; expiry: number } = { data: [], expiry: 0 };
@@ -17,7 +18,7 @@ export default async function ProjectsSection() {
     }
 
     const projects = await getProjects();
-    if (!projects) return null;
+    if (!projects) return renderSkeleton();
 
     const projectsList = await enrichProjects(projects, cfg.sortProjects);
 
@@ -28,13 +29,13 @@ export default async function ProjectsSection() {
     return renderProjects(projectsList);
 }
 
-function renderProjects(projectsList: any[]) {
+function renderProjects(data: any[]) {
     return (
         <section>
             <SectionHeader title="Projects" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {projectsList.map((project, index) => (
+                {data.map((project, index) => (
                     <div key={index}>
                         <Card className="group overflow-hidden border-none transition-all duration-300 h-full">
                             <div className="h-2 bg-primary" />
@@ -100,6 +101,22 @@ function renderProjects(projectsList: any[]) {
                                 )}
                             </CardContent>
                         </Card>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+}
+
+function renderSkeleton() {
+    return (
+        <section>
+            <SectionHeader title="Projects" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[1, 2, 3, 4].map((_, index) => (
+                    <div key={index}>
+                        <Skeleton className="h-48 w-full" />
                     </div>
                 ))}
             </div>

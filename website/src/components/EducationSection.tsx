@@ -72,6 +72,7 @@ function renderSkeleton() {
     return (
         <section>
             <SectionHeader title="Education" />
+
             <div className="space-y-4">
                 {[1, 2].map((_, index) => (
                     <div key={index}>
