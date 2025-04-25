@@ -7,7 +7,7 @@
 
 # Dynamic CV
 
-This project is a scalable CV webapp built with **Next.js**, **Sanity**, **Tailwind CSS**, and **shadcn/ui**.
+This project is a scalable CV website built with **Next.js**, **Sanity**, **Tailwind CSS**, and **shadcn/ui**.
 It allows users to dynamically and easily generate a CV with customizable themes, fonts, and content.
 
 ---
