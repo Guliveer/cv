@@ -28,7 +28,7 @@ export default async function EducationSection() {
     eduCache.data = formattedEducation;
     eduCache.expiry = Date.now() + 10 * 60 * 1000; // Cache for 10 minutes
 
-    renderSection(formattedEducation);
+    return renderSection(formattedEducation);
 }
 
 function renderSection(data: any) {
