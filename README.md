@@ -25,7 +25,7 @@ cd cv
 Run the following command to install all required dependencies:
 ```bash
 cd website
-npm install
+npm install --legacy-peer-deps
 ```
 
 ### 3. Set Up Sanity
@@ -71,11 +71,32 @@ The application will be available by default at `http://localhost:3000`.
 
 ---
 
+## Deployment (Vercel)
+
+### 1. **Create new Vercel Project**:
+Go to [Vercel](https://vercel.com/) and create a new project.
+
+### 2. **Connect to GitHub**:
+Connect your GitHub account and select the repository with your CV project.
+
+### 3. **Select directory**:
+Choose the `website/` directory as the root for your project.
+
+### 4. **Dependencies installation**:
+Vercel will automatically detect the dependencies from your `package.json` file.
+However, you may need to override the default command
+and add the `--legacy-peer-deps` flag to the build command to avoid dependency issues:
+```bash
+npm install --legacy-peer-deps
+```
+
+---
+
 ## Customization
 
 ### 1. **Edit Theme**
 Modify the theme colors in [website/src/styles/theme.css](./website/src/styles/theme.css)  
-To do so, you can visit one of the listed websites there to generate a color palette
+To do so, you can visit one of the listed websites in that file to generate a color palette.
 
 ### 2. **Change Fonts**
 Update the `fontFamily` in [website/tailwind.config.ts](./website/tailwind.config.ts)  
