@@ -1,10 +1,10 @@
 import {defineCliConfig} from 'sanity/cli'
-import sanity from './config'
+import {config} from './config'
 
 export default defineCliConfig({
   api: {
-    projectId: sanity.projectId,
-    dataset: sanity.dataset,
+    projectId: config.projectId,
+    dataset: config.dataset,
   },
   /**
    * Enable auto-updates for studios.
