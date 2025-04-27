@@ -2,7 +2,7 @@ import { Badge } from '@/components/ui/badge'
 
 export function DateBadge({startDate, endDate}: {startDate: string | Date, endDate: string | Date}) {
     return (
-        <Badge variant="outline" className="text-sm">
+        <Badge variant="outline" className="text-sm w-fit">
             {startDate instanceof Date ? startDate.toLocaleDateString() : startDate} — {endDate instanceof Date ? endDate.toLocaleDateString() : endDate ? endDate : "Present"}
         </Badge>
     )
