@@ -1,12 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink, Star } from "lucide-react"
+import cfg from "@/../config.json"
 import Link from "next/link"
 import SectionHeader from "./SectionHeader"
 import { getProjects } from "@/lib/queries"
 import { enrichProjects } from "@/lib/utils"
-import cfg from "@/../config.json"
+import { Github, ExternalLink, Star } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import {Skeleton} from "@/components/ui/skeleton";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 // Cache object
 const projectsCache: { data: any[]; expiry: number } = { data: [], expiry: 0 };

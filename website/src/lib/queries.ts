@@ -2,7 +2,6 @@ import { sanityClient } from '@/lib/sanity'
 
 interface Profile {
     name: string
-    title: string
     location: {
         city: string
         country: string
@@ -14,6 +13,7 @@ interface Profile {
             _ref: string
         }
     }
+    birthday: string
     languages: {
         name: string
         prof: string
@@ -30,6 +30,7 @@ export const getProfile = async (): Promise<Profile | null> => {
     const query = `*[_type == "profile"][0]{
         name,
         image,
+        birthday,
         location,
         email,
         bio,
@@ -50,7 +51,7 @@ interface Experience {
     }
     position: string
     startDate: string
-    endDate?: string
+    endDate: string
     description: string
 }
 
@@ -72,7 +73,7 @@ interface EducationEntry {
     degree: string
     field: string
     startDate: string
-    endDate?: string
+    endDate: string
     description: string
 }
 
@@ -89,11 +90,11 @@ export const getEducation = async (): Promise<EducationEntry[]> => {
 }
 
 interface Project {
-    stars?: number;
+    stars: number;
     title: string
-    description?: string
-    github?: string
-    technologies?: string[]
+    description: string
+    github: string
+    technologies: string[]
 }
 
 export const getProjects = async (): Promise<Project[]> => {

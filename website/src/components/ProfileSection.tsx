@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge"
 import { Skeleton } from "@/components/ui/skeleton"
-import { Mail, Languages, Award, MapPin, MessageCircle } from "lucide-react"
+import { Mail, Languages, Award, MapPin, Cake, MessageCircle } from "lucide-react"
 import { Globe, Github, Linkedin, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import SectionHeader from "./SectionHeader"
@@ -11,6 +11,14 @@ import { getProfile } from "@/lib/queries";
 
 // Cache object
 const profileCache: { data: any; expiry: number } = { data: null, expiry: 0 };
+
+function formatDate(dateString: string, locale: string = "en-GB", short: boolean = true): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(locale, {
+        year: "numeric",
+        month: short ? "short" : "long",
+    });
+}
 
 export default async function ProfileSection() {
     // Check if the cache is valid
@@ -27,9 +35,14 @@ export default async function ProfileSection() {
     // Remove duplicates from skills
     profile.skills = [...new Set(profile.skills)];
 
+    // Format birthday
+    if (profile.birthday) {
+        profile.birthday = formatDate(profile.birthday, "en-GB"); // Full month name
+    }
+
     // Update cache
     profileCache.data = profile;
-    profileCache.expiry = Date.now() + 10 * 60 * 1000; // Cache for 10 minutes
+    profileCache.expiry = Date.now() + 3 * 60 * 1000; // Cache for 3 minutes
 
     return renderSection(profile);
 }
@@ -59,18 +72,28 @@ function renderSection(data: any) {
                         <h1 className="text-3xl font-bold">{data.name}</h1>
 
                         {/* Email */}
-                        <div className="flex items-center justify-center gap-2 opacity-80">
-                            <Mail size={16} />
-                            <a href={`mailto:${data.email}`} className="hover:underline">
-                                {data.email}
-                            </a>
-                        </div>
+                        {data.email && (
+                            <div className="flex items-center justify-center gap-2 opacity-80">
+                                <Mail size={16} />
+                                <a href={`mailto:${data.email}`} className="hover:underline">
+                                    {data.email}
+                                </a>
+                            </div>
+                        )}
 
                         {/* Location */}
                         {data.location && (
                             <div className="flex items-center justify-center gap-2 opacity-80">
                                 <MapPin size={16} />
                                 <span>{data.location.city}, {data.location.country}</span>
+                            </div>
+                        )}
+
+                        {/* Birthday */}
+                        {data.birthday && (
+                            <div className="flex items-center justify-center gap-2 opacity-80">
+                                <Cake size={16} />
+                                <span>{data.birthday}</span>
                             </div>
                         )}
                     </div>

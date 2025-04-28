@@ -20,6 +20,8 @@ export default defineType({
 
     defineField({ name: 'email', title: 'Contact Email', type: 'string', validation: (Rule) => Rule.email() }),
 
+    defineField({ name: 'birthday', title: 'Birthday', type: 'date', options: { dateFormat: 'DD-MM-YYYY' } }),
+
     defineField({
       name: 'location',
       title: 'Location',

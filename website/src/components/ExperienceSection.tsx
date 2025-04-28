@@ -37,7 +37,7 @@ export default async function ExperienceSection() {
     });
 
     expCache.data = sortedExperiences;
-    expCache.expiry = Date.now() + 10 * 60 * 1000; // Cache for 10 minutes
+    expCache.expiry = Date.now() + 3 * 60 * 1000; // Cache for 3 minutes
 
     return renderSection(sortedExperiences);
 }

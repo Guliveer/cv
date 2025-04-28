@@ -13,10 +13,10 @@ export default function Home() {
         <main className="min-h-screen bg-gradient-to-br from-background via-background to-background/90 relative overflow-hidden">
 
             {/* Decorative elements */}
-            <div className="print-hidden absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-40 dark:opacity-30 pointer-events-none select-none">
-                <div className="absolute top-0 right-0 bg-primary/20 w-80 h-80 rounded-full blur-3xl" />
-                <div className="absolute top-1/2 left-1/4 bg-primary/10 w-96 h-96 rounded-full blur-3xl" />
-                <div className="absolute bottom-0 left-2/3 bg-primary/20 w-72 h-72 rounded-full blur-3xl" />
+            <div className="print-hidden absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10 dark:opacity-5 pointer-events-none select-none">
+                <div className="absolute top-0 right-0 bg-primary w-96 h-96 rounded-full blur-3xl" />
+                <div className="absolute top-1/2 left-1/4 bg-primary/60 w-96 h-96 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-2/3 bg-primary w-96 h-96 rounded-full blur-3xl" />
             </div>
 
             <HeaderActions />
@@ -37,6 +37,7 @@ export default function Home() {
                 <ProjectsSection />
             </div>
 
+            {/* DO NOT TOUCH THE FOOTER */}
             <footer className="print-hidden bg-transparent">
                 <div className="container bg-transparent mx-auto mb-6">
                     <Separator className="mb-6" />

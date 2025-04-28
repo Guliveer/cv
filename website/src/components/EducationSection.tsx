@@ -26,7 +26,7 @@ export default async function EducationSection() {
 
     // Update cache
     eduCache.data = formattedEducation;
-    eduCache.expiry = Date.now() + 10 * 60 * 1000; // Cache for 10 minutes
+    eduCache.expiry = Date.now() + 3 * 60 * 1000; // Cache for 3 minutes
 
     return renderSection(formattedEducation);
 }

@@ -1,16 +1,16 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Analytics } from '@vercel/analytics/next'
 import "@/styles/globals.css"
 import { ThemeProvider } from "@/components/ThemeProvider"
+import type { Metadata } from "next"
+import { Analytics } from '@vercel/analytics/next'
 import { getProfile } from "@/lib/queries";
-
 
 const profile = await getProfile();
 
+// DO NOT TOUCH THE METADATA (Except description and keywords)
 export const metadata: Metadata = {
     title: (profile?.name ? `CV | ${profile.name}` : "CV"),
-    description: "Easily scalable CV built with Next.js, Sanity and shadcni",
+    description: "Easily scalable CV built with Next.js, Sanity and shadcn",
     keywords: [
         "CV",
         "Resume",
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
         },
     ],
     creator: "Oliwer Pawelski",
+    icons: "/favicon.svg",
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -43,7 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <body>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     {children}
-                    <Analytics />
+                    <Analytics /> {/* Vercel analytics */}
                 </ThemeProvider>
             </body>
         </html>
