@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
-export function ThemeToggle() {
+export default function ThemeToggle() {
     const { setTheme } = useTheme();
     const [curTheme, setCurTheme] = useState("system");
 

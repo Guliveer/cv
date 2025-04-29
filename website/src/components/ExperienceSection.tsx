@@ -1,24 +1,16 @@
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import SectionHeader from "./SectionHeader"
-import {BriefcaseIcon, ExternalLink} from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { BriefcaseIcon, ExternalLink } from "lucide-react"
 import { getExperience } from "@/lib/queries"
 import { shortDate } from "@/lib/utils"
 import { urlFor } from "@/lib/sanity"
-import Image from "next/image"
-import Link from "next/link"
 import { DateBadge } from "@/components/ui/date-badge";
-import {Skeleton} from "@/components/ui/skeleton";
-
-// Cache object
-const expCache: { data: any[]; expiry: number } = { data: [], expiry: 0 };
+import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default async function ExperienceSection() {
-    // Check if the cache is valid
-    if (expCache.data && expCache.expiry > Date.now()) {
-        return renderSection(expCache.data);
-    }
-
     const experiences = await getExperience();
     if (!experiences) return renderSkeleton();
 
@@ -35,9 +27,6 @@ export default async function ExperienceSection() {
         const dateB = new Date(b.startDate).getTime();
         return dateB - dateA;
     });
-
-    expCache.data = sortedExperiences;
-    expCache.expiry = Date.now() + 3 * 60 * 1000; // Cache for 3 minutes
 
     return renderSection(sortedExperiences);
 }

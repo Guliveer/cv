@@ -9,9 +9,6 @@ import SectionHeader from "./SectionHeader"
 import { urlFor } from "@/lib/sanity"
 import { getProfile } from "@/lib/queries";
 
-// Cache object
-const profileCache: { data: any; expiry: number } = { data: null, expiry: 0 };
-
 function formatDate(dateString: string, locale: string = "en-GB", short: boolean = true): string {
     const date = new Date(dateString);
     return date.toLocaleDateString(locale, {
@@ -21,11 +18,6 @@ function formatDate(dateString: string, locale: string = "en-GB", short: boolean
 }
 
 export default async function ProfileSection() {
-    // Check if the cache is valid
-    if (profileCache.data && profileCache.expiry > Date.now()) {
-        return renderSection(profileCache.data);
-    }
-
     const profile = await getProfile();
     if (!profile) return renderSkeleton();
 
@@ -39,10 +31,6 @@ export default async function ProfileSection() {
     if (profile.birthday) {
         profile.birthday = formatDate(profile.birthday, "en-GB"); // Full month name
     }
-
-    // Update cache
-    profileCache.data = profile;
-    profileCache.expiry = Date.now() + 3 * 60 * 1000; // Cache for 3 minutes
 
     return renderSection(profile);
 }
@@ -59,8 +47,10 @@ function renderSection(data: any) {
                     <Avatar className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-primary/20 shadow-lg">
                         {data.image ? (
                             <AvatarImage
+                                className="object-cover"
                                 src={urlFor(data.image).width(400).height(400).url()}
                                 alt={data.name}
+                                loading="eager"
                             />
                         ) : (
                             <AvatarFallback>{data.name.slice(0, 2)}</AvatarFallback>
@@ -146,7 +136,7 @@ function renderSection(data: any) {
                                 <MessageCircle className="h-6 w-6 mr-2 text-primary" />
                                 <span>About</span>
                             </h2>
-                            <p>{data.bio}</p>
+                            <p className="whitespace-pre-line">{data.bio}</p>
                         </div>
                     )}
 

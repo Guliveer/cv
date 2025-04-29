@@ -1,31 +1,18 @@
 import cfg from "@/../config.json"
 import Link from "next/link"
 import SectionHeader from "./SectionHeader"
+import { Github, ExternalLink, Star } from "lucide-react"
 import { getProjects } from "@/lib/queries"
 import { enrichProjects } from "@/lib/utils"
-import { Github, ExternalLink, Star } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {Skeleton} from "@/components/ui/skeleton";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-
-// Cache object
-const projectsCache: { data: any[]; expiry: number } = { data: [], expiry: 0 };
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default async function ProjectsSection() {
-    // Check if the cache is valid
-    if (projectsCache.data.length > 0 && projectsCache.expiry > Date.now()) {
-        return renderProjects(projectsCache.data);
-    }
-
     const projects = await getProjects();
     if (!projects) return renderSkeleton();
 
     const projectsList = await enrichProjects(projects, cfg.sortProjects);
-
-    // Update cache
-    projectsCache.data = projectsList;
-    projectsCache.expiry = Date.now() + 10 * 60 * 1000; // Cache for 10 minutes
 
     return renderProjects(projectsList);
 }

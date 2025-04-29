@@ -1,19 +1,12 @@
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import SectionHeader from "./SectionHeader"
 import { getEducation } from "@/lib/queries";
-import {shortDate} from "@/lib/utils";
+import { shortDate } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge"
+import { Skeleton } from "@/components/ui/skeleton";
 import { DateBadge } from "@/components/ui/date-badge";
-import {Skeleton} from "@/components/ui/skeleton";
-
-const eduCache: { data: any[]; expiry: number } = { data: [], expiry: 0 };
+import { Card, CardContent } from "@/components/ui/card"
 
 export default async function EducationSection() {
-    // Check if the cache is valid
-    if (eduCache.data && eduCache.expiry > Date.now()) {
-        return renderSection(eduCache.data);
-    }
-
     const education = await getEducation();
     if (!education) return renderSkeleton();
 
@@ -23,10 +16,6 @@ export default async function EducationSection() {
         startDate: shortDate(edu.startDate, "en-US"),
         endDate: edu.endDate ? shortDate(edu.endDate, "en-US") : "Present",
     }));
-
-    // Update cache
-    eduCache.data = formattedEducation;
-    eduCache.expiry = Date.now() + 3 * 60 * 1000; // Cache for 3 minutes
 
     return renderSection(formattedEducation);
 }
