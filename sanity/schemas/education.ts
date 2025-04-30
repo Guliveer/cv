@@ -30,4 +30,20 @@ export default defineType({
     }),
     defineField({ name: 'description', title: 'Description', type: 'text' }),
   ],
+  orderings: [
+    {
+      title: 'Start Date (Newest first)',
+      name: 'startDateDesc',
+      by: [
+        { field: 'startDate', direction: 'desc' },
+      ],
+    },
+    {
+      title: 'Start Date (Oldest first)',
+      name: 'startDateAsc',
+      by: [
+        { field: 'startDate', direction: 'asc' },
+      ],
+    },
+  ]
 })
