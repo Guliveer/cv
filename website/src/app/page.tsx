@@ -7,6 +7,8 @@ import { HeaderActions } from "@/components/HeaderActions"
 import { Separator } from "@/components/ui/separator"
 import {Github} from "lucide-react";
 
+export const revalidate = 60
+export const dynamic = "force-dynamic"; //? https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering
 
 export default function Home() {
     return (

@@ -1,3 +1,4 @@
+"use server"
 import { sanityClient } from '@/lib/sanity'
 
 interface Profile {
