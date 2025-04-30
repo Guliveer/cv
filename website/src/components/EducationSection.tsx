@@ -46,7 +46,7 @@ function renderSection(data: any) {
                                     <DateBadge startDate={edu.startDate} endDate={edu.endDate} />
                                 </div>
                                 {edu.description && ( // Show description if available
-                                    <p className="mt-4 text-muted-foreground">{edu.description}</p>
+                                    <p className="mt-4 text-muted-foreground whitespace-pre-line">{edu.description}</p>
                                 )}
                             </CardContent>
                         </Card>

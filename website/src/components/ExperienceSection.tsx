@@ -102,7 +102,7 @@ function renderSection(data: any) {
                                             </div>
                                         </div>
                                         {experience.description && ( // Show description if available
-                                            <p className="mt-4 text-muted-foreground">{experience.description}</p>
+                                            <p className="mt-4 text-muted-foreground whitespace-pre-line">{experience.description}</p>
                                         )}
                                     </CardContent>
                                 </Card>
