@@ -38,7 +38,7 @@ export const getProfile = async (): Promise<Profile | null> => {
         languages,
         skills,
     }`
-    return await sanityClient.fetch(query)
+    return await sanityClient.fetch(query, {}, {next: { revalidate: 600 }})
 }
 
 interface Experience {
@@ -65,7 +65,7 @@ export const getExperience = async (): Promise<Experience[]> => {
         endDate,
         description
     }`
-    return await sanityClient.fetch(query)
+    return await sanityClient.fetch(query, {}, {next: { revalidate: 600 }})
 }
 
 interface EducationEntry {
@@ -86,7 +86,7 @@ export const getEducation = async (): Promise<EducationEntry[]> => {
         endDate,
         description
     }`
-    return await sanityClient.fetch(query)
+    return await sanityClient.fetch(query, {}, {next: { revalidate: 600 }})
 }
 
 interface Project {
@@ -104,5 +104,5 @@ export const getProjects = async (): Promise<Project[]> => {
         github,
         technologies[]
     }`
-    return await sanityClient.fetch(query)
+    return await sanityClient.fetch(query, {}, {next: { revalidate: 600 }})
 }
