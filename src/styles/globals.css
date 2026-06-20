@@ -66,6 +66,10 @@
         --chart-5: 340 75% 55%;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     * {
         @apply border-border;
     }
@@ -74,6 +78,16 @@
         @apply bg-background text-foreground font-body text-base font-normal;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
+    }
+
+    a, button, [role="button"] {
+        cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
     }
 
     h1, h2, h3, h4, h5, h6 {

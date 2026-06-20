@@ -8,19 +8,18 @@ import { DateBadge } from "@/components/ui/date-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import { FadeUp } from "./FadeUp"
 
 export default async function ExperienceSection() {
     const experiences = await getExperience();
     if (!experiences) return renderSkeleton();
 
-    // Preprocess and format dates
     const formattedExperiences = experiences.map((experience) => ({
         ...experience,
         startDate: shortDate(experience.startDate, "en-US"),
         endDate: experience.endDate ? shortDate(experience.endDate, "en-US") : "Present",
     }));
 
-    // Sort experiences by startDate (oldest first)
     const sortedExperiences = formattedExperiences.sort((a, b) => {
         const dateA = new Date(a.startDate).getTime();
         const dateB = new Date(b.startDate).getTime();
@@ -30,7 +29,6 @@ export default async function ExperienceSection() {
     return renderSection(sortedExperiences);
 }
 
-
 function renderSection(data: any) {
     return (
         <section>
@@ -38,7 +36,7 @@ function renderSection(data: any) {
 
             <div className="space-y-8">
                 {data.map((experience: any, index: number) => (
-                    <div key={index} >
+                    <FadeUp key={index} delay={index * 0.05}>
                         {/* Company header with icon */}
                         {index === 0 || data[index - 1].company !== experience.company ? (
                             <div className="flex items-center gap-3 mb-3">
@@ -83,16 +81,13 @@ function renderSection(data: any) {
                         {/* Experience card */}
                         <div className="ml-5 pl-6 border-l-2 border-primary/20">
                             <div className="relative">
-                                {/* Small connector line */}
                                 <span className="absolute -left-6 top-1/3 w-4 h-px bg-primary/20" />
-
-                                <Card className="overflow-hidden border-none transition-all duration-300 hover:bg-card/80">
-                                    <CardContent className="p-6 bg-secondary">
+                                <Card className="overflow-hidden border-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/5 bg-secondary">
+                                    <CardContent className="p-6">
                                         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                                             <div>
                                                 <div className="text-xl font-semibold flex items-center gap-2">
                                                     <span>{experience.position}</span>
-
                                                     {experience.endDate === "Present" && (
                                                         <Badge variant="default" className="text-xs cursor-default">
                                                             Current
@@ -101,20 +96,17 @@ function renderSection(data: any) {
                                                 </div>
                                                 <div className="flex items-center gap-2">
                                                     <DateBadge startDate={experience.startDate} endDate={experience.endDate} />
-                                                    {/*<Badge variant="outline" className="text-accent-foreground">*/}
-                                                    {/*    {calcDuration(experience.startDate, experience.endDate)} months*/}
-                                                    {/*</Badge>*/}
                                                 </div>
                                             </div>
                                         </div>
-                                        {experience.description && ( // Show description if available
-                                            <p className="mt-4 text-muted-foreground whitespace-pre-line">{experience.description}</p>
+                                        {experience.description && (
+                                            <p className="mt-4 text-muted-foreground whitespace-pre-line leading-relaxed">{experience.description}</p>
                                         )}
                                     </CardContent>
                                 </Card>
                             </div>
                         </div>
-                    </div>
+                    </FadeUp>
                 ))}
             </div>
         </section>
@@ -128,17 +120,14 @@ function renderSkeleton() {
             <div className="space-y-8">
                 {[1, 2, 3].map((_, index) => (
                     <div key={index}>
-                        {/* Company header */}
                         <div className="flex items-center gap-3 mb-3">
                             <Skeleton className="h-10 w-10 rounded-md" />
                             <Skeleton className="h-6 w-48" />
                         </div>
-
-                        {/* Experience card */}
                         <div className="ml-5 pl-6 border-l-2 border-primary/20">
                             <div className="relative">
                                 <span className="absolute -left-6 top-1/3 w-4 h-px bg-primary/20" />
-                                <Skeleton className="h-48 w-full" />
+                                <Skeleton className="h-32 w-full" />
                             </div>
                         </div>
                     </div>

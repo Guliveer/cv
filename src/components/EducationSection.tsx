@@ -5,12 +5,12 @@ import { Badge } from "@/components/ui/badge"
 import { Skeleton } from "@/components/ui/skeleton";
 import { DateBadge } from "@/components/ui/date-badge";
 import { Card, CardContent } from "@/components/ui/card"
+import { FadeUp } from "./FadeUp"
 
 export default async function EducationSection() {
     const education = await getEducation();
     if (!education) return renderSkeleton();
 
-    // Preprocess and format dates
     const formattedEducation = education.map((edu) => ({
         ...edu,
         startDate: shortDate(edu.startDate, "en-US"),
@@ -27,15 +27,14 @@ function renderSection(data: any) {
 
             <div className="space-y-4">
                 {data.map((edu: any, index: number) => (
-                    <div key={index} >
-                        <Card className="overflow-hidden border-none transition-all duration-300 hover:bg-card/80">
-                            <CardContent className="p-6 bg-secondary">
+                    <FadeUp key={index} delay={index * 0.07}>
+                        <Card className="overflow-hidden border-none transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/5 bg-secondary">
+                            <CardContent className="p-6">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                                     <div>
-                                        <div className="flex items-center text-xl font-semibold gap-1.5">
+                                        <div className="flex items-center text-xl font-semibold gap-1.5 flex-wrap">
                                             <span>{edu.field}</span>
-
-                                            {edu.degree && ( // Show degree if available
+                                            {edu.degree && (
                                                 <Badge variant="secondary" className="text-sm bg-muted-foreground/80 text-secondary">
                                                     {edu.degree}
                                                 </Badge>
@@ -45,12 +44,12 @@ function renderSection(data: any) {
                                     </div>
                                     <DateBadge startDate={edu.startDate} endDate={edu.endDate} />
                                 </div>
-                                {edu.description && ( // Show description if available
-                                    <p className="mt-4 text-muted-foreground whitespace-pre-line">{edu.description}</p>
+                                {edu.description && (
+                                    <p className="mt-4 text-muted-foreground whitespace-pre-line leading-relaxed">{edu.description}</p>
                                 )}
                             </CardContent>
                         </Card>
-                    </div>
+                    </FadeUp>
                 ))}
             </div>
         </section>
@@ -61,11 +60,10 @@ function renderSkeleton() {
     return (
         <section>
             <SectionHeader title="Education" />
-
             <div className="space-y-4">
                 {[1, 2].map((_, index) => (
                     <div key={index}>
-                        <Skeleton className="h-48 w-full" />
+                        <Skeleton className="h-32 w-full" />
                     </div>
                 ))}
             </div>
