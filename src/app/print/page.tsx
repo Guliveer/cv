@@ -189,29 +189,42 @@ export default async function PrintPage() {
                         {projects.map((project, i) => {
                             const match = project.github?.match(/github\.com\/([^/]+)\/([^/]+)/)
                             const repoPath = match ? `${match[1]}/${match[2]}` : null
+                            const desc = project.description
+                                ? project.description.length > 72
+                                    ? project.description.substring(0, 72).trimEnd() + '…'
+                                    : project.description
+                                : null
+                            // Cap at 6 technologies to keep cards compact
+                            const techs = (project.technologies ?? []).slice(0, 6)
+                            const extraCount = (project.technologies?.length ?? 0) - techs.length
                             return (
                                 <div key={i} className="cv-project">
-                                    <div className="cv-project-header">
-                                        <span className="cv-project-title">{project.title}</span>
-                                        {project.stars > 0 && (
-                                            <span className="cv-project-stars">
-                                                <IconStar />{project.stars}
-                                            </span>
-                                        )}
-                                    </div>
-                                    {repoPath && (
-                                        <a href={project.github} className="cv-project-url" target="_blank" rel="noreferrer">
-                                            {repoPath}
-                                        </a>
+                                    <span className="cv-project-title">{project.title}</span>
+                                    {project.stars > 0 && (
+                                        <span className="cv-project-stars">
+                                            <IconStar />{project.stars}
+                                        </span>
                                     )}
-                                    {project.description && (
-                                        <p className="cv-project-desc">{project.description}</p>
+                                    {(repoPath || desc) && (
+                                        <div className="cv-project-meta">
+                                            {repoPath && (
+                                                <a href={project.github} className="cv-project-url" target="_blank" rel="noreferrer">
+                                                    {repoPath}
+                                                </a>
+                                            )}
+                                            {desc && (
+                                                <span className="cv-project-desc">— {desc}</span>
+                                            )}
+                                        </div>
                                     )}
-                                    {project.technologies?.length > 0 && (
+                                    {techs.length > 0 && (
                                         <div className="cv-project-chips">
-                                            {project.technologies.map((tech: string, ti: number) => (
+                                            {techs.map((tech: string, ti: number) => (
                                                 <span key={ti} className="cv-chip cv-chip-accent">{tech}</span>
                                             ))}
+                                            {extraCount > 0 && (
+                                                <span className="cv-chip" style={{color:'#9ca3af', borderColor:'#e5e7eb'}}>+{extraCount}</span>
+                                            )}
                                         </div>
                                     )}
                                 </div>
