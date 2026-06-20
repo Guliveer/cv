@@ -83,8 +83,8 @@ const config = {
         "5xl": "4.210rem",
       },
       fontFamily: {
-        heading: 'Special Gothic Expanded One',
-        body: 'Karla',
+        heading: ['"Special Gothic Expanded One"', 'sans-serif'],
+        body: ['Karla', 'sans-serif'],
       },
       fontWeight: {
         normal: "400",
