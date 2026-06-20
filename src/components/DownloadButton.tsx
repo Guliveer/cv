@@ -3,28 +3,38 @@
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-function downloadPageAsPDF() {
-    const root = document.documentElement;
-    const hiddenEls = document.querySelectorAll(".print\\:hidden");
+function printCV() {
+    const html = document.documentElement;
 
-    hiddenEls.forEach(el => el.classList.add("hidden"));
-    root.classList.add("print-mode");
-    const style = document.createElement("style");
-    style.id = "print-scaling";
-    document.head.appendChild(style);
+    // Framer Motion animates elements to opacity:0/translateY before they enter
+    // the viewport — force them all visible before printing
+    const motionEls = document.querySelectorAll<HTMLElement>("[style*='opacity'], [style*='transform']");
+    const savedStyles: Array<{ el: HTMLElement; opacity: string; transform: string }> = [];
+
+    motionEls.forEach(el => {
+        savedStyles.push({ el, opacity: el.style.opacity, transform: el.style.transform });
+        el.style.opacity = "1";
+        el.style.transform = "none";
+    });
+
+    // Temporarily strip dark mode so print CSS gets light-mode variables
+    const wasDark = html.classList.contains("dark");
+    if (wasDark) html.classList.remove("dark");
 
     const cleanup = () => {
-        hiddenEls.forEach(el => el.classList.remove("hidden"));
-        root.classList.remove("print-mode");
-        const existingStyle = document.getElementById("print-scaling");
-        if (existingStyle) existingStyle.remove();
+        savedStyles.forEach(({ el, opacity, transform }) => {
+            el.style.opacity = opacity;
+            el.style.transform = transform;
+        });
+        if (wasDark) html.classList.add("dark");
         window.removeEventListener("afterprint", cleanup);
     };
 
-
     window.addEventListener("afterprint", cleanup);
     window.print();
-    cleanup();
+
+    // afterprint doesn't fire reliably in all browsers — fallback timeout
+    setTimeout(cleanup, 1000);
 }
 
 export default function DownloadButton() {
@@ -33,7 +43,7 @@ export default function DownloadButton() {
             variant="outline"
             size="icon"
             className="rounded-full"
-            onClick={downloadPageAsPDF}
+            onClick={printCV}
         >
             <Download className="h-[1.2rem] w-[1.2rem]" />
             <span className="sr-only">Download CV as PDF</span>
