@@ -17,19 +17,14 @@ function formatDate(dateString: string, locale: string = "en-GB", short: boolean
 }
 
 export default async function ProfileSection() {
-    const profile = await getProfile();
-    if (!profile) return renderSkeleton();
+    const raw = await getProfile();
+    if (!raw) return renderSkeleton();
 
-    // Sort skills alphabetically
-    profile.skills = profile.skills.sort((a: string, b: string) => a.localeCompare(b));
-
-    // Remove duplicates from skills
-    profile.skills = [...new Set(profile.skills)];
-
-    // Format birthday
-    if (profile.birthday) {
-        profile.birthday = formatDate(profile.birthday, "en-GB"); // Full month name
-    }
+    const profile = {
+        ...raw,
+        skills: [...new Set(raw.skills)].sort((a, b) => a.localeCompare(b)),
+        birthday: raw.birthday ? formatDate(raw.birthday, "en-GB") : raw.birthday,
+    };
 
     return renderSection(profile);
 }

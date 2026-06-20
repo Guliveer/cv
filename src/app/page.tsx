@@ -7,7 +7,7 @@ import { HeaderActions } from "@/components/HeaderActions"
 import { Separator } from "@/components/ui/separator"
 import {Github} from "lucide-react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default function Home() {
     return (

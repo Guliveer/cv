@@ -47,7 +47,7 @@
     {
       "company": "Auctane",
       "url": "https://auctane.com/",
-      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/fe45ac24847cfcad44d1bfe37505ff098ae3cb34-1080x1080.jpg",
+      "companyLogo": "/content/companies/auctane.jpg",
       "position": "Software Engineer Intern",
       "startDate": "2025-07-01",
       "endDate": null,
@@ -56,7 +56,7 @@
     {
       "company": "Zielona Góra Philharmonic",
       "url": "https://filharmoniazg.pl",
-      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/3c665842ca596c4b14afb357fe8a8463885b6998-233x244.png",
+      "companyLogo": "/content/companies/zielona-g-ra-philharmonic.png",
       "position": "Front-of-House & Backstage Coordinator",
       "startDate": "2024-02-01",
       "endDate": null,
@@ -65,7 +65,7 @@
     {
       "company": "Ekoenergetyka",
       "url": "https://ekoenergetyka.com/",
-      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225.png",
+      "companyLogo": "/content/companies/ekoenergetyka.png",
       "position": "Commissioning Technician",
       "startDate": "2024-06-24",
       "endDate": "2024-08-30",
@@ -74,7 +74,7 @@
     {
       "company": "Ekoenergetyka",
       "url": "https://ekoenergetyka.com/",
-      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225.png",
+      "companyLogo": "/content/companies/ekoenergetyka.png",
       "position": "Commissioning Technician",
       "startDate": "2023-05-15",
       "endDate": "2023-09-29",
@@ -83,7 +83,7 @@
     {
       "company": "SEVEN",
       "url": "https://eseven.pl",
-      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192.png",
+      "companyLogo": "/content/companies/seven.png",
       "position": "Computer equipment service technician",
       "startDate": "2022-10-01",
       "endDate": "2022-10-30",
@@ -92,7 +92,7 @@
     {
       "company": "SEVEN",
       "url": "https://eseven.pl",
-      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192.png",
+      "companyLogo": "/content/companies/seven.png",
       "position": "Computer equipment service technician",
       "startDate": "2022-07-01",
       "endDate": "2022-07-31",
