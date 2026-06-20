@@ -1,0 +1,193 @@
+{
+  "profile": {
+    "name": "Oliwer Pawelski",
+    "email": "oliwer.pawelski@gmail.com",
+    "birthday": "2003-05-01",
+    "location": {
+      "city": "Zielona Góra",
+      "country": "Poland"
+    },
+    "bio": "My previous professional career was mainly focused on hardware, despite a much greater interest in software. On each of the covered ones I was considered conscientious and accurate, I often also performed various extracurricular work, and my efforts at Ekoenergetyka contributed to increasing the efficiency of the entire department.\nIn my work, I strive primarily to achieve the required goals and expand my knowledge of various fields and technologies.",
+    "image": "https://avatars.githubusercontent.com/u/32310642?v=4",
+    "links": [
+      { "type": "GitHub", "name": "Guliveer", "url": "https://github.com/Guliveer" },
+      { "type": "LinkedIn", "name": "oliwer-pawelski", "url": "https://linkedin.com/in/oliwer-pawelski" }
+    ],
+    "languages": [
+      { "name": "Polish", "proficiency": "Native" },
+      { "name": "English", "proficiency": "Advanced" }
+    ],
+    "skills": [
+      "Astro",
+      "Bash",
+      "C",
+      "C#",
+      "C++",
+      "Java",
+      "JavaScript",
+      "Jest",
+      "Keycloak",
+      "Linux",
+      "macOS",
+      "Markdown",
+      "MUI",
+      "MySQL",
+      "Next.js",
+      "PostgreSQL",
+      "React",
+      "shadcn/ui",
+      "Supabase",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vercel",
+      "Windows"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Auctane",
+      "url": "https://auctane.com/",
+      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/fe45ac24847cfcad44d1bfe37505ff098ae3cb34-1080x1080.jpg",
+      "position": "Software Engineer Intern",
+      "startDate": "2025-07-01",
+      "endDate": null,
+      "description": null
+    },
+    {
+      "company": "Zielona Góra Philharmonic",
+      "url": "https://filharmoniazg.pl",
+      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/3c665842ca596c4b14afb357fe8a8463885b6998-233x244.png",
+      "position": "Front-of-House & Backstage Coordinator",
+      "startDate": "2024-02-01",
+      "endDate": null,
+      "description": "- Taking care of the guests' comfort\n- Checking tickets during events\n- Managing the cloakroom for guests\n- Offering support and assistance to guests\n- Giving flowers and other gifts to artists performing on stage\n- Preparing the stage and equipment for events"
+    },
+    {
+      "company": "Ekoenergetyka",
+      "url": "https://ekoenergetyka.com/",
+      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225.png",
+      "position": "Commissioning Technician",
+      "startDate": "2024-06-24",
+      "endDate": "2024-08-30",
+      "description": "[Re-employment]"
+    },
+    {
+      "company": "Ekoenergetyka",
+      "url": "https://ekoenergetyka.com/",
+      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225.png",
+      "position": "Commissioning Technician",
+      "startDate": "2023-05-15",
+      "endDate": "2023-09-29",
+      "description": "- Configuration and possible modification of software (custom Linux) for EV charger to ensure correct operation of the device\n- Repair of minor faults in electrical configurations and computer networks in EV chargers\n- Increased team efficiency by over 40% by automating software configuration\n- Maintaining order at workplace"
+    },
+    {
+      "company": "SEVEN",
+      "url": "https://eseven.pl",
+      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192.png",
+      "position": "Computer equipment service technician",
+      "startDate": "2022-10-01",
+      "endDate": "2022-10-30",
+      "description": "- Preparation of technical documentation.\n- Maintaining the cleanliness of the work station\n- Development of skills related to diagnostics\n- Diagnostics of faults, damages and worn-out elements\n- Assessment of the technical condition of equipment\n- Testing products, reviewing and analyzing test results"
+    },
+    {
+      "company": "SEVEN",
+      "url": "https://eseven.pl",
+      "companyLogo": "https://cdn.sanity.io/images/083omu2x/production/e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192.png",
+      "position": "Computer equipment service technician",
+      "startDate": "2022-07-01",
+      "endDate": "2022-07-31",
+      "description": "- Diagnostics and repair of computer technology devices\n- Office database management\n- Preparing offers for customers\n- Enthusiastic customer assistance and providing excellent customer service\n- Modernization of the computer network at the customer's premises"
+    },
+    {
+      "company": "Cyberion",
+      "url": null,
+      "companyLogo": null,
+      "position": "Computer equipment service technician",
+      "startDate": "2021-01-01",
+      "endDate": "2021-01-31",
+      "description": "- Modernization and repair of computer technology devices\n- Customer service by providing them with the necessary information\n- Supporting customers in all aspects of using the store's offer"
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Zielona Góra",
+      "degree": "Bachelor of Engineering",
+      "field": "Computer Science",
+      "startDate": "2023-10-02",
+      "endDate": null,
+      "description": "[ Specialization ]\nNetwork IT systems\n---\n[ Activities and associations ]\nElected group leader for one of the year's four academic groups.\nTook part in a university campaign for Women's Day and Men's Day."
+    },
+    {
+      "school": "CKZiU nr 2 \"Elektronik\"",
+      "degree": "Technical School",
+      "field": "Information Technology",
+      "startDate": "2019-09-01",
+      "endDate": "2023-04-30",
+      "description": "[ Activities and associations ]\nStudent Government\n---\n[ Project ]\nA song queuing system based on a voting system. Written mainly in PHP connecting to a MySQL database using a PDO connection. The site is hosted on a self-configured private server running Windows 10."
+    },
+    {
+      "school": "Gimnazjum nr 7 im. UNICEF",
+      "degree": "Secondary School",
+      "field": "Mathematics and IT",
+      "startDate": "2016-09-01",
+      "endDate": "2019-06-30",
+      "description": "[ Activities and associations ]\nAudio support for school events"
+    }
+  ],
+  "projects": [
+    {
+      "title": "RFID Access Manager",
+      "description": "A complete, production-ready RFID-based access control system with cloud management",
+      "github": "https://github.com/Guliveer/RFID-access-manager",
+      "technologies": ["TypeScript", "PostgreSQL", "Vercel", "C++"]
+    },
+    {
+      "title": "R6S Stats Extension",
+      "description": "Chrome extension for Rainbow Six Siege stats tracking",
+      "github": "https://github.com/Guliveer/r6-stats-extension",
+      "technologies": ["TypeScript", "Chrome Extension"]
+    },
+    {
+      "title": "Twitch Miner Go",
+      "description": null,
+      "github": "https://github.com/Guliveer/twitch-miner-go",
+      "technologies": ["GraphQL"]
+    },
+    {
+      "title": "Track Drop",
+      "description": null,
+      "github": "https://github.com/Guliveer/song-request",
+      "technologies": ["Supabase", "MUI", "2FA", "PostgreSQL", "Next.js", "YouTube API", "Spotify API", "React", "Vercel"]
+    },
+    {
+      "title": "MacOS Calculator Clone",
+      "description": null,
+      "github": "https://github.com/Guliveer/MacOS-Calculator",
+      "technologies": ["Swift", "SwiftUI"]
+    },
+    {
+      "title": "Windows App Vault",
+      "description": null,
+      "github": "https://github.com/Guliveer/SecureAppVault",
+      "technologies": ["C#", ".NET", "WPF", "2FA"]
+    },
+    {
+      "title": "Kryptonum Challenge",
+      "description": null,
+      "github": "https://github.com/Guliveer/kryptonum-challenge",
+      "technologies": ["Astro", "CSS"]
+    },
+    {
+      "title": "Academic repository",
+      "description": null,
+      "github": "https://github.com/Guliveer/UZ",
+      "technologies": ["Networking", "C", "C++", "Python", "Java", "Operating Systems", "MySQL"]
+    },
+    {
+      "title": "CV Website",
+      "description": "This website you're viewing",
+      "github": "https://github.com/Guliveer/cv",
+      "technologies": ["shadcn/ui", "Next.js", "Tailwind CSS", "TypeScript"]
+    }
+  ]
+}

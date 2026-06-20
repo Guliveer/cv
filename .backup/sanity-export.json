@@ -1,0 +1,437 @@
+{
+  "exportedAt": "2026-04-27T20:28:38.500Z",
+  "projectId": "083omu2x",
+  "dataset": "production",
+  "documents": {
+    "profile": [
+      {
+        "_createdAt": "2025-04-19T21:27:13Z",
+        "_id": "c0af6db3-b15a-433d-b830-34fc793d697d",
+        "_rev": "UF1nvQ8PWGva9AGx3rl37J",
+        "_system": {
+          "base": {
+            "id": "c0af6db3-b15a-433d-b830-34fc793d697d",
+            "rev": "7uyMJuxQt2unjGflJD0WyX"
+          }
+        },
+        "_type": "profile",
+        "_updatedAt": "2026-03-01T13:23:13Z",
+        "bio": "My previous professional career was mainly focused on hardware, despite a much greater interest in software. On each of the covered ones I was considered conscientious and accurate, I often also performed various extracurricular work, and my efforts at Ekoenergetyka contributed to increasing the efficiency of the entire department.\nIn my work, I strive primarily to achieve the required goals and expand my knowledge of various fields and technologies.",
+        "birthday": "2003-05-01",
+        "email": "oliwer.pawelski@gmail.com",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-e12816330809b301b62cc73987317634d7ca499e-1056x1056-png",
+            "_type": "reference"
+          },
+          "crop": {
+            "_type": "sanity.imageCrop",
+            "bottom": 0,
+            "left": 0,
+            "right": 0,
+            "top": 0
+          },
+          "hotspot": {
+            "_type": "sanity.imageHotspot",
+            "height": 1,
+            "width": 1,
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        "languages": [
+          {
+            "_key": "2a5085138b9d",
+            "_type": "language",
+            "name": "Polish",
+            "prof": "Native"
+          },
+          {
+            "_key": "d0e215e84b76",
+            "_type": "language",
+            "name": "English",
+            "prof": "Advanced"
+          }
+        ],
+        "links": [
+          {
+            "_key": "729e10d21d7b",
+            "_type": "link",
+            "name": "Guliveer",
+            "type": "GitHub",
+            "url": "https://github.com/Guliveer"
+          },
+          {
+            "_key": "5ccc8ca9266a",
+            "_type": "link",
+            "name": "oliwer-pawelski",
+            "type": "LinkedIn",
+            "url": "https://linkedin.com/in/oliwer-pawelski"
+          }
+        ],
+        "location": {
+          "city": "Zielona Góra",
+          "country": "Poland"
+        },
+        "name": "Oliwer Pawelski",
+        "skills": [
+          "Next.js",
+          "React",
+          "Bash",
+          "Vercel",
+          "Java",
+          "JavaScript",
+          "Keycloak",
+          "Linux",
+          "macOS",
+          "Windows",
+          "Markdown",
+          "MUI",
+          "Astro",
+          "MySQL",
+          "PostgreSQL",
+          "Supabase",
+          "C",
+          "C++",
+          "TypeScript",
+          "Tailwind CSS",
+          "Jest",
+          "shadcn/ui",
+          "Sanity",
+          "C#"
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "_createdAt": "2025-07-06T12:14:37Z",
+        "_id": "0a836aaf-2e0d-4717-8e9a-4700989019fa",
+        "_rev": "Jf6fux0XXmQdzAWJfhOSuq",
+        "_type": "experience",
+        "_updatedAt": "2025-07-06T12:15:10Z",
+        "company": "Auctane",
+        "companyLogo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-fe45ac24847cfcad44d1bfe37505ff098ae3cb34-1080x1080-jpg",
+            "_type": "reference"
+          }
+        },
+        "position": "Software Engineer Intern",
+        "startDate": "2025-07-01",
+        "url": "https://auctane.com/"
+      },
+      {
+        "_createdAt": "2025-04-22T22:29:58Z",
+        "_id": "2590f74f-bf7a-4dc3-9e11-59d70f233b0f",
+        "_rev": "xxgKgF2Ofe1Q2eErhm8Jjd",
+        "_type": "experience",
+        "_updatedAt": "2025-04-30T13:52:02Z",
+        "company": "Ekoenergetyka",
+        "companyLogo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225-png",
+            "_type": "reference"
+          }
+        },
+        "description": "- Configuration and possible modification of software (custom Linux) for EV charger to ensure correct operation of the device\n- Repair of minor faults in electrical configurations and computer networks in EV chargers\n- Increased team efficiency by over 40% by automating software configuration\n- Maintaining order at workplace",
+        "endDate": "2023-09-29",
+        "position": "Commissioning Technician",
+        "startDate": "2023-05-15",
+        "url": "https://ekoenergetyka.com/"
+      },
+      {
+        "_createdAt": "2025-04-19T21:58:22Z",
+        "_id": "3a8f8d2a-c28b-4795-a6a0-4a1b00acd6d5",
+        "_rev": "6XwkF4mzTMKN6Ehkre6Qb7",
+        "_type": "experience",
+        "_updatedAt": "2025-04-30T08:46:46Z",
+        "company": "Zielona Góra Philharmonic",
+        "companyLogo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-3c665842ca596c4b14afb357fe8a8463885b6998-233x244-png",
+            "_type": "reference"
+          }
+        },
+        "description": "- Taking care of the guests' comfort\n- Checking tickets during events\n- Managing the cloakroom for guests\n- Offering support and assistance to guests\n- Giving flowers and other gifts to artists performing on stage\n- Preparing the stage and equipment for events",
+        "position": "Front-of-House & Backstage Coordinator",
+        "startDate": "2024-02-01",
+        "url": "https://filharmoniazg.pl"
+      },
+      {
+        "_createdAt": "2025-04-30T08:13:33Z",
+        "_id": "67daf669-aaea-4048-ad8e-5fbcb6f31a1a",
+        "_rev": "DOcXr0KgQH6faBzvMlSj9L",
+        "_type": "experience",
+        "_updatedAt": "2025-05-03T09:36:16Z",
+        "company": "Cyberion",
+        "description": "- Modernization and repair of computer technology devices\n- Customer service by providing them with the necessary information\n- Supporting customers in all aspects of using the store's offer",
+        "endDate": "2021-01-31",
+        "position": "Computer equipment service technician",
+        "startDate": "2021-01-01"
+      },
+      {
+        "_createdAt": "2025-04-30T08:03:01Z",
+        "_id": "8213d239-af51-4cb5-a871-5985ef20e716",
+        "_rev": "lmOsE81v11neWfCk7bDbeS",
+        "_type": "experience",
+        "_updatedAt": "2025-05-03T09:36:14Z",
+        "company": "SEVEN",
+        "companyLogo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192-png",
+            "_type": "reference"
+          }
+        },
+        "description": "- Diagnostics and repair of computer technology devices\n- Office database management\n- Preparing offers for customers\n- Enthusiastic customer assistance and providing excellent customer service\n- Modernization of the computer network at the customer's premises",
+        "endDate": "2022-07-31",
+        "position": "Computer equipment service technician",
+        "startDate": "2022-07-01",
+        "url": "https://eseven.pl"
+      },
+      {
+        "_createdAt": "2025-04-22T22:24:51Z",
+        "_id": "b0971eb4-1f87-45fb-bd91-17c045b0a284",
+        "_rev": "wsbY3uiTgAB66quHIxFOvu",
+        "_type": "experience",
+        "_updatedAt": "2025-04-30T08:32:36Z",
+        "company": "Ekoenergetyka",
+        "companyLogo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225-png",
+            "_type": "reference"
+          }
+        },
+        "description": "[Re-employment]",
+        "endDate": "2024-08-30",
+        "position": "Commissioning Technician",
+        "startDate": "2024-06-24",
+        "url": "https://ekoenergetyka.com/"
+      },
+      {
+        "_createdAt": "2025-04-30T08:01:23Z",
+        "_id": "d016464f-aca3-4b3d-b235-366c635ef014",
+        "_rev": "UmUUe68YKQlnGGgIwLD2Wa",
+        "_type": "experience",
+        "_updatedAt": "2025-05-03T09:36:12Z",
+        "company": "SEVEN",
+        "companyLogo": {
+          "_type": "image",
+          "asset": {
+            "_ref": "image-e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192-png",
+            "_type": "reference"
+          }
+        },
+        "description": "- Preparation of technical documentation.\n- Maintaining the cleanliness of the work station\n- Development of skills related to diagnostics\n- Diagnostics of faults, damages and worn-out elements\n- Assessment of the technical condition of equipment\n- Testing products, reviewing and analyzing test results",
+        "endDate": "2022-10-30",
+        "position": "Computer equipment service technician",
+        "startDate": "2022-10-01",
+        "url": "https://eseven.pl"
+      }
+    ],
+    "education": [
+      {
+        "_createdAt": "2025-04-30T08:26:11Z",
+        "_id": "28889fba-4bb5-428e-8d4a-52fab976f14e",
+        "_rev": "CCcA9057e5RDPjFeS0camn",
+        "_system": {
+          "base": {
+            "id": "28889fba-4bb5-428e-8d4a-52fab976f14e",
+            "rev": "mC78QDDqW33QoatXAX0hNU"
+          }
+        },
+        "_type": "education",
+        "_updatedAt": "2025-07-22T12:46:27Z",
+        "degree": "Secondary School",
+        "description": "[ Activities and associations ]\nAudio support for school events",
+        "endDate": "2019-06-30",
+        "field": "Mathematics and IT",
+        "school": "Gimnazjum nr 7 im. UNICEF",
+        "startDate": "2016-09-01"
+      },
+      {
+        "_createdAt": "2025-04-30T08:15:55Z",
+        "_id": "9b6b657f-5835-45b2-b69b-806ce93de089",
+        "_rev": "lPjn4ZUdTZd7SVNWgcwuCF",
+        "_system": {
+          "base": {
+            "id": "9b6b657f-5835-45b2-b69b-806ce93de089",
+            "rev": "xxgKgF2Ofe1Q2eErhhE05h"
+          }
+        },
+        "_type": "education",
+        "_updatedAt": "2025-07-22T12:46:19Z",
+        "degree": "Technical School",
+        "description": "[ Activities and associations ]\nStudent Government\n---\n[ Project ]\nA song queuing system based on a voting system. Written mainly in PHP connecting to a MySQL database using a PDO connection. The site is hosted on a self-configured private server running Windows 10.",
+        "endDate": "2023-04-30",
+        "field": "Information Technology",
+        "school": "CKZiU nr 2 \"Elektronik\"",
+        "startDate": "2019-09-01"
+      },
+      {
+        "_createdAt": "2025-04-19T22:16:44Z",
+        "_id": "e72428c3-fd9c-4c0d-b97d-288d25505ad3",
+        "_rev": "BUVrw50Lsb5b4HSyhNckpw",
+        "_system": {
+          "base": {
+            "id": "e72428c3-fd9c-4c0d-b97d-288d25505ad3",
+            "rev": "CCcA9057e5RDPjFeS0cW5n"
+          }
+        },
+        "_type": "education",
+        "_updatedAt": "2025-08-08T15:59:19Z",
+        "degree": "Bachelor of Engineering",
+        "description": "[ Specialization ]\nNetwork IT systems\n---\n[ Activities and associations ]\nElected group leader for one of the year’s four academic groups.\nTook part in a university campaign for Women’s Day and Men’s Day.",
+        "field": "Computer Science",
+        "school": "University of Zielona Góra",
+        "startDate": "2023-10-02"
+      }
+    ],
+    "project": [
+      {
+        "_createdAt": "2025-06-24T13:23:13Z",
+        "_id": "119557c2-34e0-4203-98d0-d04c6eff71f4",
+        "_rev": "QLfQ2awvTBgv69CRRDPld1",
+        "_type": "project",
+        "_updatedAt": "2025-06-24T13:26:47Z",
+        "github": "https://github.com/Guliveer/song-request",
+        "technologies": [
+          "Supabase",
+          "MUI",
+          "2FA",
+          "PostgreSQL",
+          "Next.js",
+          "YouTube API",
+          "Spotify API",
+          "React",
+          "Vercel"
+        ],
+        "title": "Track Drop"
+      },
+      {
+        "_createdAt": "2025-04-23T08:46:15Z",
+        "_id": "16c138d0-cafa-4bf9-ba36-89cde629a0df",
+        "_rev": "uTyHygxc6GVDB6oVobpApN",
+        "_type": "project",
+        "_updatedAt": "2025-04-23T19:24:47Z",
+        "github": "https://github.com/Guliveer/UZ",
+        "technologies": [
+          "Networking",
+          "C",
+          "C++",
+          "Python",
+          "Java",
+          "Operating Systems",
+          "MySQL"
+        ],
+        "title": "Academic repository"
+      },
+      {
+        "_createdAt": "2025-04-25T14:56:28Z",
+        "_id": "650b5796-04f4-485e-9bf0-1df7b5acb4bd",
+        "_rev": "Lxiqe1v8blrcYp7QYmCHtY",
+        "_type": "project",
+        "_updatedAt": "2025-04-25T14:57:09Z",
+        "github": "https://github.com/Guliveer/SecureAppVault",
+        "technologies": [
+          "C#",
+          ".NET",
+          "WPF",
+          "2FA"
+        ],
+        "title": "Windows App Vault"
+      },
+      {
+        "_createdAt": "2025-04-19T22:17:32Z",
+        "_id": "75228e65-7743-4f7b-a956-15e109482f9a",
+        "_rev": "DOcXr0KgQH6faBzvMrpzgD",
+        "_type": "project",
+        "_updatedAt": "2025-05-03T21:07:45Z",
+        "description": "This website you're viewing",
+        "github": "https://github.com/Guliveer/cv",
+        "technologies": [
+          "Sanity",
+          "shadcn",
+          "Next.js"
+        ],
+        "title": "CV Website"
+      },
+      {
+        "_createdAt": "2025-04-25T14:57:58Z",
+        "_id": "c89b0675-bed6-42a1-a28a-f1301c208901",
+        "_rev": "Lxiqe1v8blrcYp7QYmCKci",
+        "_type": "project",
+        "_updatedAt": "2025-04-25T14:58:22Z",
+        "github": "https://github.com/Guliveer/MacOS-Calculator",
+        "technologies": [
+          "Swift",
+          "SwiftUI"
+        ],
+        "title": "MacOS Calculator Clone"
+      },
+      {
+        "_createdAt": "2026-03-01T13:16:09Z",
+        "_id": "d68742e4-558c-457d-8e9c-fcf1b69363de",
+        "_rev": "TjDZXq3soyhjAnnR9vjMhW",
+        "_system": {
+          "base": {
+            "id": "d68742e4-558c-457d-8e9c-fcf1b69363de",
+            "rev": "TjDZXq3soyhjAnnR9viXrU"
+          }
+        },
+        "_type": "project",
+        "_updatedAt": "2026-03-01T13:20:39Z",
+        "github": "https://github.com/Guliveer/twitch-miner-go",
+        "technologies": [
+          "GraphQL"
+        ],
+        "title": "Twitch Miner Go"
+      },
+      {
+        "_createdAt": "2025-04-25T14:52:37Z",
+        "_id": "e4574a2d-0c1f-44e6-a751-65b772332070",
+        "_rev": "Lxiqe1v8blrcYp7QYmC0pg",
+        "_type": "project",
+        "_updatedAt": "2025-04-25T14:54:03Z",
+        "github": "https://github.com/Guliveer/kryptonum-challenge",
+        "technologies": [
+          "Astro",
+          "CSS"
+        ],
+        "title": "Kryptonum Challenge"
+      }
+    ]
+  },
+  "assets": [
+    {
+      "ref": "image-e12816330809b301b62cc73987317634d7ca499e-1056x1056-png",
+      "originalUrl": "https://cdn.sanity.io/images/083omu2x/production/e12816330809b301b62cc73987317634d7ca499e-1056x1056.png",
+      "localPath": "/content/profile.png"
+    },
+    {
+      "ref": "image-fe45ac24847cfcad44d1bfe37505ff098ae3cb34-1080x1080-jpg",
+      "originalUrl": "https://cdn.sanity.io/images/083omu2x/production/fe45ac24847cfcad44d1bfe37505ff098ae3cb34-1080x1080.jpg",
+      "localPath": "/content/companies/auctane.jpg"
+    },
+    {
+      "ref": "image-12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225-png",
+      "originalUrl": "https://cdn.sanity.io/images/083omu2x/production/12f9cb57e0e98cc25fcb95c13eb8583b2e3154a4-225x225.png",
+      "localPath": "/content/companies/ekoenergetyka.png"
+    },
+    {
+      "ref": "image-3c665842ca596c4b14afb357fe8a8463885b6998-233x244-png",
+      "originalUrl": "https://cdn.sanity.io/images/083omu2x/production/3c665842ca596c4b14afb357fe8a8463885b6998-233x244.png",
+      "localPath": "/content/companies/zielona-g-ra-philharmonic.png"
+    },
+    {
+      "ref": "image-e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192-png",
+      "originalUrl": "https://cdn.sanity.io/images/083omu2x/production/e2c9c58b3e5f0f97f89bcecfd832556a74de29ee-192x192.png",
+      "localPath": "/content/companies/seven.png"
+    }
+  ]
+}

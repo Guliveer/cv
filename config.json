@@ -1,0 +1,12 @@
+{
+    "technologyBlacklist": [
+        "CMake",
+        "CSS",
+        "PowerShell",
+        "Shell",
+        "Batchfile",
+        "HTML"
+    ],
+    "showStargazersCount": true,
+    "sortProjects": "name"
+}
