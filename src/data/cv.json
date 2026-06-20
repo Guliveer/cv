@@ -45,9 +45,10 @@
   },
   "experience": [
     {
-      "company": "Auctane",
-      "url": "https://auctane.com/",
-      "companyLogo": "/content/companies/auctane.jpg",
+      "company": "ShipStation Global",
+      "formerlyKnownAs": ["Auctane"],
+      "url": "https://shipstationglobal.com/",
+      "companyLogo": "/content/companies/shipstation-global.png",
       "position": "Software Engineer Intern",
       "startDate": "2025-07-01",
       "endDate": null,

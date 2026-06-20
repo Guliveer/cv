@@ -55,21 +55,28 @@ function renderSection(data: any) {
                                         <BriefcaseIcon className="w-7 h-7 text-primary" />
                                     )}
                                 </div>
-                                <p className="text-xl font-semibold text-primary">
-                                    {experience.url ? (
-                                        <Link
-                                            href={experience.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 hover:underline"
-                                        >
-                                            <span>{experience.company}</span>
-                                            <ExternalLink className="w-5 h-auto" />
-                                        </Link>
-                                    ) : (
-                                        experience.company
+                                <div>
+                                    <p className="text-xl font-semibold text-primary">
+                                        {experience.url ? (
+                                            <Link
+                                                href={experience.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center gap-1.5 hover:underline"
+                                            >
+                                                <span>{experience.company}</span>
+                                                <ExternalLink className="w-5 h-auto" />
+                                            </Link>
+                                        ) : (
+                                            experience.company
+                                        )}
+                                    </p>
+                                    {experience.formerlyKnownAs?.length > 0 && (
+                                        <p className="text-xs text-muted-foreground mt-0.5">
+                                            formerly {experience.formerlyKnownAs.join(" → ")}
+                                        </p>
                                     )}
-                                </p>
+                                </div>
                             </div>
                         ) : null}
 
