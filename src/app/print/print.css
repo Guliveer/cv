@@ -1,0 +1,329 @@
+/* ─── Print CV stylesheet ───────────────────────────────────────────────────
+   This file is ONLY loaded by /print route.
+   Zero Tailwind. Zero CSS variables. Zero dark mode.
+   Every value is explicit so the output is predictable in every browser.
+───────────────────────────────────────────────────────────────────────────── */
+
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Page ── */
+@page {
+    size: A4;
+    margin: 1.4cm 1.6cm;
+}
+
+html, body {
+    background: #ffffff;
+    color: #111827;
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* ── Auto-print then close ── */
+/* Triggered by the script in page.tsx */
+
+/* ── Layout ── */
+.cv-page {
+    width: 100%;
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* ── Header / Profile ── */
+.cv-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.4rem;
+    align-items: start;
+    margin-bottom: 1.4rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid #00b4b4;
+}
+
+.cv-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+    flex-shrink: 0;
+}
+
+.cv-name {
+    font-size: 20pt;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+}
+
+.cv-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    margin-top: 0.4rem;
+}
+
+.cv-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 9pt;
+    color: #4b5563;
+}
+
+.cv-meta-item a {
+    color: #4b5563;
+    text-decoration: none;
+}
+
+.cv-meta-icon {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    color: #00b4b4;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ── Bio ── */
+.cv-bio {
+    font-size: 9.5pt;
+    color: #374151;
+    line-height: 1.6;
+    margin-top: 0.6rem;
+}
+
+/* ── Two-column lower header ── */
+.cv-header-details {
+    margin-top: 0.5rem;
+}
+
+/* ── Skills / Languages inline ── */
+.cv-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.3rem;
+}
+
+.cv-chip {
+    font-size: 8pt;
+    padding: 1px 7px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    white-space: nowrap;
+    background: #f9fafb;
+}
+
+.cv-chip-accent {
+    border-color: #99e6e6;
+    background: #f0fdfd;
+    color: #0f766e;
+}
+
+/* ── Section ── */
+.cv-section {
+    margin-bottom: 1.1rem;
+    break-inside: avoid;
+}
+
+.cv-section-title {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #00b4b4;
+    margin-bottom: 0.55rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ── Experience / Education entries ── */
+.cv-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 1rem;
+    margin-bottom: 0.8rem;
+    break-inside: avoid;
+}
+
+.cv-entry:last-child {
+    margin-bottom: 0;
+}
+
+.cv-entry-company {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #111827;
+}
+
+.cv-entry-formerly {
+    font-size: 8pt;
+    color: #9ca3af;
+    margin-top: 0.1rem;
+}
+
+.cv-entry-position {
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: #374151;
+}
+
+.cv-entry-school {
+    font-size: 9.5pt;
+    font-weight: 700;
+    color: #111827;
+}
+
+.cv-entry-field {
+    font-size: 9.5pt;
+    font-weight: 500;
+    color: #374151;
+}
+
+.cv-entry-dates {
+    font-size: 8.5pt;
+    color: #6b7280;
+    white-space: nowrap;
+    text-align: right;
+    padding-top: 1px;
+}
+
+.cv-entry-badge-current {
+    font-size: 7.5pt;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: #00b4b4;
+    color: #ffffff;
+    font-weight: 600;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.cv-entry-desc {
+    grid-column: 1 / -1;
+    font-size: 8.8pt;
+    color: #4b5563;
+    margin-top: 0.3rem;
+    line-height: 1.55;
+    white-space: pre-line;
+}
+
+/* ── Projects ── */
+.cv-projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.cv-project {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 0.45rem 0.6rem;
+    break-inside: avoid;
+}
+
+.cv-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.cv-project-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #111827;
+}
+
+.cv-project-stars {
+    font-size: 8pt;
+    color: #6b7280;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.cv-project-url {
+    font-size: 8pt;
+    color: #00b4b4;
+    text-decoration: none;
+    display: block;
+    margin-top: 0.15rem;
+}
+
+.cv-project-desc {
+    font-size: 8.5pt;
+    color: #4b5563;
+    margin-top: 0.2rem;
+    line-height: 1.4;
+}
+
+.cv-project-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-top: 0.3rem;
+}
+
+/* ── Skills / Languages two-col ── */
+.cv-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+}
+
+.cv-lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9pt;
+    padding: 2px 0;
+    color: #374151;
+}
+
+.cv-lang-level {
+    font-size: 8pt;
+    color: #6b7280;
+}
+
+/* ── Print triggers ── */
+@media screen {
+    body {
+        padding: 1.5rem;
+        background: #f3f4f6;
+    }
+
+    .cv-page {
+        background: white;
+        padding: 2cm;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        border-radius: 4px;
+    }
+}
+
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+
+    .cv-page {
+        padding: 0;
+        box-shadow: none;
+    }
+}
