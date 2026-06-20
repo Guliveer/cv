@@ -137,6 +137,24 @@
   ],
   "projects": [
     {
+      "title": "CV Website",
+      "description": "This website you're viewing",
+      "github": "https://github.com/Guliveer/cv",
+      "technologies": ["shadcn/ui", "Next.js", "Tailwind CSS", "TypeScript"]
+    },
+    {
+      "title": "Twitch Miner Go",
+      "description": null,
+      "github": "https://github.com/Guliveer/twitch-miner-go",
+      "technologies": ["GraphQL"]
+    },
+    {
+      "title": "Academic repository",
+      "description": null,
+      "github": "https://github.com/Guliveer/UZ",
+      "technologies": ["Networking", "C", "C++", "Python", "Java", "Operating Systems", "MySQL"]
+    },
+    {
       "title": "RFID Access Manager",
       "description": "A complete, production-ready RFID-based access control system with cloud management",
       "github": "https://github.com/Guliveer/RFID-access-manager",
@@ -147,12 +165,6 @@
       "description": "Chrome extension for Rainbow Six Siege stats tracking",
       "github": "https://github.com/Guliveer/r6-stats-extension",
       "technologies": ["TypeScript", "Chrome Extension"]
-    },
-    {
-      "title": "Twitch Miner Go",
-      "description": null,
-      "github": "https://github.com/Guliveer/twitch-miner-go",
-      "technologies": ["GraphQL"]
     },
     {
       "title": "Track Drop",
@@ -167,6 +179,12 @@
       "technologies": ["Swift", "SwiftUI"]
     },
     {
+      "title": "Windows Context Git",
+      "description": "Windows Explorer context menu extension adding a Git submenu with a dark WPF UI",
+      "github": "https://github.com/Guliveer/windows-context-git",
+      "technologies": ["C#", ".NET", "WPF"]
+    },
+    {
       "title": "Windows App Vault",
       "description": null,
       "github": "https://github.com/Guliveer/SecureAppVault",
@@ -179,16 +197,10 @@
       "technologies": ["Astro", "CSS"]
     },
     {
-      "title": "Academic repository",
-      "description": null,
-      "github": "https://github.com/Guliveer/UZ",
-      "technologies": ["Networking", "C", "C++", "Python", "Java", "Operating Systems", "MySQL"]
-    },
-    {
-      "title": "CV Website",
-      "description": "This website you're viewing",
-      "github": "https://github.com/Guliveer/cv",
-      "technologies": ["shadcn/ui", "Next.js", "Tailwind CSS", "TypeScript"]
+      "title": "Link Shortener",
+      "description": "Static redirect system with dynamic routing and a JSON-based config",
+      "github": "https://github.com/Guliveer/r",
+      "technologies": ["TypeScript", "Next.js"]
     }
   ]
 }

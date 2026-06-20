@@ -7,6 +7,9 @@
         "Batchfile",
         "HTML"
     ],
+    "technologyAliases": {
+        "PLpgSQL": "PostgreSQL"
+    },
     "showStargazersCount": true,
     "sortProjects": "name"
 }

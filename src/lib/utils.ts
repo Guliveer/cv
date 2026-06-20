@@ -81,14 +81,17 @@ export async function enrichProjects(projects: any[], sortBy: string) {
                     project.description = project.description || repoData.description;
                     project.stars = repoData.stargazers_count;
 
-                    // Process and sort languages
+                    const aliases: Record<string, string> = cfg.technologyAliases ?? {};
+                    const normalize = (t: string) => aliases[t] ?? t;
+
                     project.technologies = [
                         ...(project.technologies || []),
                         ...(repoData.languages || [])
                             .filter((language: string) => language && !cfg.technologyBlacklist.includes(language)),
                     ]
-                        .filter((value, index, self) => self.indexOf(value) === index) // Remove duplicates
-                        .sort(); // Sort alphabetically
+                        .map(normalize)
+                        .filter((value: string, index: number, self: string[]) => self.indexOf(value) === index)
+                        .sort();
                 } catch (error) {
                     console.error(`Failed to fetch data for ${project.github}:`, error);
                 }
