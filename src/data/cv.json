@@ -137,22 +137,34 @@
   ],
   "projects": [
     {
+      "title": "Academic repository",
+      "description": null,
+      "github": "https://github.com/Guliveer/UZ",
+      "technologies": ["Networking", "C", "C++", "Python", "Java", "Operating Systems", "MySQL"]
+    },
+    {
       "title": "CV Website",
       "description": "This website you're viewing",
       "github": "https://github.com/Guliveer/cv",
       "technologies": ["shadcn/ui", "Next.js", "Tailwind CSS", "TypeScript"]
     },
     {
-      "title": "Twitch Miner Go",
+      "title": "Kryptonum Challenge",
       "description": null,
-      "github": "https://github.com/Guliveer/twitch-miner-go",
-      "technologies": ["GraphQL"]
+      "github": "https://github.com/Guliveer/kryptonum-challenge",
+      "technologies": ["Astro", "CSS"]
     },
     {
-      "title": "Academic repository",
+      "title": "Link Shortener",
+      "description": "Static redirect system with dynamic routing and a JSON-based config",
+      "github": "https://github.com/Guliveer/r",
+      "technologies": ["TypeScript", "Next.js"]
+    },
+    {
+      "title": "MacOS Calculator Clone",
       "description": null,
-      "github": "https://github.com/Guliveer/UZ",
-      "technologies": ["Networking", "C", "C++", "Python", "Java", "Operating Systems", "MySQL"]
+      "github": "https://github.com/Guliveer/MacOS-Calculator",
+      "technologies": ["Swift", "SwiftUI"]
     },
     {
       "title": "RFID Access Manager",
@@ -173,16 +185,10 @@
       "technologies": ["Supabase", "MUI", "2FA", "PostgreSQL", "Next.js", "YouTube API", "Spotify API", "React", "Vercel"]
     },
     {
-      "title": "MacOS Calculator Clone",
+      "title": "Twitch Miner Go",
       "description": null,
-      "github": "https://github.com/Guliveer/MacOS-Calculator",
-      "technologies": ["Swift", "SwiftUI"]
-    },
-    {
-      "title": "Windows Context Git",
-      "description": "Windows Explorer context menu extension adding a Git submenu with a dark WPF UI",
-      "github": "https://github.com/Guliveer/windows-context-git",
-      "technologies": ["C#", ".NET", "WPF"]
+      "github": "https://github.com/Guliveer/twitch-miner-go",
+      "technologies": ["GraphQL"]
     },
     {
       "title": "Windows App Vault",
@@ -191,16 +197,10 @@
       "technologies": ["C#", ".NET", "WPF", "2FA"]
     },
     {
-      "title": "Kryptonum Challenge",
-      "description": null,
-      "github": "https://github.com/Guliveer/kryptonum-challenge",
-      "technologies": ["Astro", "CSS"]
-    },
-    {
-      "title": "Link Shortener",
-      "description": "Static redirect system with dynamic routing and a JSON-based config",
-      "github": "https://github.com/Guliveer/r",
-      "technologies": ["TypeScript", "Next.js"]
+      "title": "Windows Context Git",
+      "description": "Windows Explorer context menu extension adding a Git submenu with a dark WPF UI",
+      "github": "https://github.com/Guliveer/windows-context-git",
+      "technologies": ["C#", ".NET", "WPF"]
     }
   ]
 }
