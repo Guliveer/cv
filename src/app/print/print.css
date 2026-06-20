@@ -1,5 +1,5 @@
 /* ─── Print CV stylesheet ───────────────────────────────────────────────────
-   This file is ONLY loaded by /print route.
+   Loaded ONLY by /print route — fully isolated from globals.css.
    Zero Tailwind. Zero CSS variables. Zero dark mode.
    Every value is explicit so the output is predictable in every browser.
 ───────────────────────────────────────────────────────────────────────────── */
@@ -27,59 +27,56 @@ html, body {
     print-color-adjust: exact;
 }
 
-/* ── Auto-print then close ── */
-/* Triggered by the script in page.tsx */
-
 /* ── Layout ── */
 .cv-page {
     width: 100%;
     max-width: 21cm;
     margin: 0 auto;
-    padding: 0;
 }
 
 /* ── Header / Profile ── */
 .cv-header {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 96px 1fr;
     gap: 1.4rem;
     align-items: start;
-    margin-bottom: 1.4rem;
-    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
     border-bottom: 2px solid #00b4b4;
 }
 
 .cv-avatar {
-    width: 88px;
-    height: 88px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #e5e7eb;
-    flex-shrink: 0;
+    display: block;
 }
 
 .cv-name {
-    font-size: 20pt;
+    font-size: 19pt;
     font-weight: 700;
     color: #111827;
     letter-spacing: -0.3px;
-    line-height: 1.2;
-    margin-bottom: 0.3rem;
+    line-height: 1.15;
+    margin-bottom: 0.25rem;
 }
 
 .cv-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem 1.4rem;
-    margin-top: 0.4rem;
+    gap: 0.35rem 1.2rem;
+    margin-top: 0.35rem;
 }
 
 .cv-meta-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    font-size: 9pt;
+    gap: 0.28rem;
+    font-size: 8.5pt;
     color: #4b5563;
+    line-height: 1.4;
 }
 
 .cv-meta-item a {
@@ -88,8 +85,8 @@ html, body {
 }
 
 .cv-meta-icon {
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     flex-shrink: 0;
     color: #00b4b4;
     fill: none;
@@ -97,91 +94,162 @@ html, body {
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
+    /* prevent vertical jitter */
+    position: relative;
+    top: 0.5px;
 }
 
 /* ── Bio ── */
 .cv-bio {
-    font-size: 9.5pt;
+    font-size: 9pt;
     color: #374151;
     line-height: 1.6;
-    margin-top: 0.6rem;
+    margin-top: 0.55rem;
 }
 
-/* ── Two-column lower header ── */
-.cv-header-details {
-    margin-top: 0.5rem;
+/* ── Skills / Languages ── */
+.cv-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2.5rem;
+    margin-bottom: 1rem;
+    align-items: start;
 }
 
-/* ── Skills / Languages inline ── */
 .cv-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.3rem;
+    gap: 0.25rem;
     margin-top: 0.3rem;
 }
 
 .cv-chip {
-    font-size: 8pt;
-    padding: 1px 7px;
+    font-size: 7.5pt;
+    padding: 1px 6px;
     border-radius: 999px;
     border: 1px solid #d1d5db;
     color: #374151;
     white-space: nowrap;
     background: #f9fafb;
+    line-height: 1.6;
 }
 
 .cv-chip-accent {
-    border-color: #99e6e6;
-    background: #f0fdfd;
-    color: #0f766e;
+    border-color: #a7f3d0;
+    background: #f0fdf4;
+    color: #065f46;
+}
+
+.cv-lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 9pt;
+    padding: 2.5px 0;
+    color: #374151;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.cv-lang-row:last-child {
+    border-bottom: none;
+}
+
+.cv-lang-name {
+    font-weight: 500;
+}
+
+.cv-lang-level {
+    font-size: 8pt;
+    color: #9ca3af;
 }
 
 /* ── Section ── */
 .cv-section {
-    margin-bottom: 1.1rem;
-    break-inside: avoid;
+    margin-bottom: 1rem;
 }
 
 .cv-section-title {
-    font-size: 10pt;
+    font-size: 7.5pt;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: #00b4b4;
-    margin-bottom: 0.55rem;
-    padding-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.22rem;
     border-bottom: 1px solid #e5e7eb;
 }
 
 /* ── Experience / Education entries ── */
 .cv-entry {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0 1rem;
-    margin-bottom: 0.8rem;
+    /* left content + fixed-width date column */
+    grid-template-columns: 1fr 7rem;
+    grid-template-rows: auto auto;
+    column-gap: 0.75rem;
+    row-gap: 0;
+    margin-bottom: 0.7rem;
     break-inside: avoid;
+    align-items: start;
 }
 
 .cv-entry:last-child {
     margin-bottom: 0;
 }
 
+/* Left col: company/school block */
+.cv-entry-left {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Right col: dates aligned to first line of company name */
+.cv-entry-dates {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 8pt;
+    color: #6b7280;
+    white-space: nowrap;
+    text-align: right;
+    /* align baseline with company name (font-size 9.5pt → cap-height offset) */
+    padding-top: 2px;
+    line-height: 1.55;
+}
+
+/* Description spans full width below */
+.cv-entry-desc {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 8.5pt;
+    color: #4b5563;
+    margin-top: 0.28rem;
+    line-height: 1.55;
+    white-space: pre-line;
+    padding-left: 0.75rem;
+    border-left: 2px solid #e5e7eb;
+}
+
 .cv-entry-company {
     font-size: 9.5pt;
     font-weight: 700;
     color: #111827;
+    display: inline;
 }
 
 .cv-entry-formerly {
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #9ca3af;
     margin-top: 0.1rem;
+    font-style: italic;
 }
 
 .cv-entry-position {
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-weight: 500;
     color: #374151;
+    margin-top: 0.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .cv-entry-school {
@@ -191,58 +259,57 @@ html, body {
 }
 
 .cv-entry-field {
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-weight: 500;
     color: #374151;
+    margin-top: 0.1rem;
 }
 
-.cv-entry-dates {
-    font-size: 8.5pt;
+.cv-entry-degree {
+    font-size: 7.5pt;
     color: #6b7280;
-    white-space: nowrap;
-    text-align: right;
-    padding-top: 1px;
+    margin-left: 0.4rem;
+    font-style: normal;
 }
 
 .cv-entry-badge-current {
-    font-size: 7.5pt;
-    padding: 1px 6px;
+    display: inline-block;
+    font-size: 7pt;
+    padding: 0 5px;
     border-radius: 999px;
     background: #00b4b4;
     color: #ffffff;
-    font-weight: 600;
-    margin-left: 6px;
-    vertical-align: middle;
-}
-
-.cv-entry-desc {
-    grid-column: 1 / -1;
-    font-size: 8.8pt;
-    color: #4b5563;
-    margin-top: 0.3rem;
-    line-height: 1.55;
-    white-space: pre-line;
+    font-weight: 700;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
 }
 
 /* ── Projects ── */
 .cv-projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: 0.45rem;
 }
 
 .cv-project {
     border: 1px solid #e5e7eb;
-    border-radius: 6px;
-    padding: 0.45rem 0.6rem;
+    border-radius: 5px;
+    border-top: 2px solid #00b4b4;
+    padding: 0.4rem 0.55rem;
     break-inside: avoid;
+}
+
+/* Last project spans full width when count is odd */
+.cv-project:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.225rem);
 }
 
 .cv-project-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 0.4rem;
 }
 
 .cv-project-title {
@@ -252,56 +319,36 @@ html, body {
 }
 
 .cv-project-stars {
-    font-size: 8pt;
-    color: #6b7280;
+    font-size: 7.5pt;
+    color: #9ca3af;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .cv-project-url {
-    font-size: 8pt;
+    font-size: 7.5pt;
     color: #00b4b4;
     text-decoration: none;
     display: block;
-    margin-top: 0.15rem;
+    margin-top: 0.12rem;
+    line-height: 1.4;
 }
 
 .cv-project-desc {
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #4b5563;
     margin-top: 0.2rem;
-    line-height: 1.4;
+    line-height: 1.45;
 }
 
 .cv-project-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.2rem;
-    margin-top: 0.3rem;
+    gap: 0.18rem;
+    margin-top: 0.28rem;
 }
 
-/* ── Skills / Languages two-col ── */
-.cv-two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 2rem;
-}
-
-.cv-lang-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 9pt;
-    padding: 2px 0;
-    color: #374151;
-}
-
-.cv-lang-level {
-    font-size: 8pt;
-    color: #6b7280;
-}
-
-/* ── Print triggers ── */
+/* ── Screen preview (not printed) ── */
 @media screen {
     body {
         padding: 1.5rem;
@@ -313,6 +360,7 @@ html, body {
         padding: 2cm;
         box-shadow: 0 4px 24px rgba(0,0,0,0.12);
         border-radius: 4px;
+        margin-bottom: 2rem;
     }
 }
 
@@ -325,5 +373,18 @@ html, body {
     .cv-page {
         padding: 0;
         box-shadow: none;
+        border-radius: 0;
+    }
+
+    .cv-section {
+        break-inside: auto;
+    }
+
+    .cv-entry {
+        break-inside: avoid;
+    }
+
+    .cv-project {
+        break-inside: avoid;
     }
 }

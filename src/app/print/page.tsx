@@ -122,7 +122,7 @@ export default async function PrintPage() {
                         <h2 className="cv-section-title">Languages</h2>
                         {profile.languages.map((lang, i) => (
                             <div key={i} className="cv-lang-row">
-                                <span>{lang.name}</span>
+                                <span className="cv-lang-name">{lang.name}</span>
                                 <span className="cv-lang-level">{lang.proficiency}</span>
                             </div>
                         ))}
@@ -134,7 +134,7 @@ export default async function PrintPage() {
                     <h2 className="cv-section-title">Experience</h2>
                     {sortedExp.map((exp, i) => (
                         <div key={i} className="cv-entry">
-                            <div>
+                            <div className="cv-entry-left">
                                 <span className="cv-entry-company">{exp.company}</span>
                                 {exp.formerlyKnownAs?.length > 0 && (
                                     <div className="cv-entry-formerly">
@@ -163,14 +163,12 @@ export default async function PrintPage() {
                     <h2 className="cv-section-title">Education</h2>
                     {sortedEdu.map((edu, i) => (
                         <div key={i} className="cv-entry">
-                            <div>
+                            <div className="cv-entry-left">
                                 <span className="cv-entry-school">{edu.school}</span>
                                 <div className="cv-entry-field">
                                     {edu.field}
                                     {edu.degree && (
-                                        <span style={{fontSize:'8pt', color:'#6b7280', marginLeft:'6px'}}>
-                                            {edu.degree}
-                                        </span>
+                                        <span className="cv-entry-degree">{edu.degree}</span>
                                     )}
                                 </div>
                             </div>
