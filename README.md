@@ -1,147 +1,97 @@
 ![Next.js Badge](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
 ![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge)
-![Sanity Badge](https://img.shields.io/badge/Sanity-F03E2F?logo=sanity&logoColor=fff&style=for-the-badge)
 ![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=for-the-badge)
 ![shadcn/ui Badge](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff&style=for-the-badge)
 ![Vercel Badge](https://img.shields.io/badge/Vercel-000?logo=vercel&logoColor=fff&style=for-the-badge)
 
-# Dynamic CV
+# CV
 
-This project is a scalable CV website built with **Next.js**, **Sanity**, **Tailwind CSS**, and **shadcn/ui**.
-It allows users to dynamically and easily generate a CV with customizable themes, fonts, and content.
+A personal CV website built with **Next.js**, **Tailwind CSS**, and **shadcn/ui**.
+All content is stored in a single `src/data/cv.json` file — edit it directly in GitHub's web editor from any device, including mobile.
 
 ---
 
 ## Features
 
-- **Customizable Theme**: Easily modify colors, fonts, and styles.
-- **Sanity Integration**: Fetches data dynamically from a Sanity dataset.
-- **Responsive Design**: Optimized for all devices.
-- **Print-Ready**: Includes styles for printing the CV.
+- **JSON-based content**: No CMS, no account, no deploy step — just edit `cv.json` and push.
+- **GitHub Projects integration**: Star counts and languages are fetched automatically from GitHub API.
+- **Print / PDF**: Dedicated `/print` route with a clean A4-optimized layout, isolated from the main app styles.
+- **Dark mode**: System-aware theme with manual toggle.
+- **Responsive**: Optimized for all screen sizes.
 
 ---
 
 ## Getting Started
 
-### 1. Clone the Repository
+### 1. Clone and install
 
 ```bash
 git clone https://github.com/Guliveer/cv.git
 cd cv
+npm install
 ```
 
-### 2. Install Dependencies
+### 2. Edit your CV
 
-Run the following command to install all required dependencies:
+Open `src/data/cv.json` and fill in your data. The structure is:
 
-```bash
-cd website
-npm install --legacy-peer-deps
+```json
+{
+  "profile": { "name", "email", "birthday", "location", "bio", "image", "links", "languages", "skills" },
+  "experience": [{ "company", "url", "companyLogo", "position", "startDate", "endDate", "description", "formerlyKnownAs?" }],
+  "education":  [{ "school", "degree", "field", "startDate", "endDate", "description" }],
+  "projects":   [{ "title", "description", "github", "technologies" }]
+}
 ```
 
-### 3. Set Up Sanity
+Dates use `YYYY-MM-DD` or `YYYY-MM` format. Set `endDate` to `null` for current positions.
 
-1. **Install Sanity CLI**:
-
-   ```bash
-   npm install -g @sanity/cli
-   ```
-
-2. **Create Sanity Studio**:
-
-   - Visit [Sanity](https://www.sanity.io/) and create a new project
-   - Copy the project ID and dataset name.
-
-3. **Update Configuration**:
-   - Open [sanity/config.ts](./sanity/config.ts) and [website/config.json](./website/config.json).
-   - Replace the `projectId` and `dataset` values with your Sanity project details:
-     ```typescript
-     export const config = {
-     	projectId: "your-project-id",
-     	dataset: "your-dataset-name",
-     };
-     ```
-4. **Further configuration**:
-
-   - In [website/config.json](./website/config.json) you can also edit fields like:
-     - `technologyBlacklist` to exclude specific technologies from being displayed.
-     - `showStargazersCount` to show or hide the stargazers count on GitHub repo.
-     - `sortProjects` ("name", "stars") to sort projects by **_name_** or **_Stargazers count_** (if enabled).
-
-5. **Deploy Sanity Studio**:
-   ```bash
-   sanity deploy
-   ```
-
-### 4. Start the Development Server
-
-Navigate back to the [website](./website) directory and start the server:
+### 3. Start the development server
 
 ```bash
-cd ../website
 npm run dev
 ```
 
-(You can run Sanity Studio locally by running the same command in the [sanity](./sanity) directory)
-
-The application will be available by default at `http://localhost:3000`.
+The app will be available at `http://localhost:3000`.
 
 ---
 
-## Deployment (Vercel)
+## Configuration
 
-### 1. **Create new Vercel Project**:
+Edit `config.json` in the root to control:
 
-Go to [Vercel](https://vercel.com/) and create a new project.
-
-### 2. **Connect to GitHub**:
-
-Connect your GitHub account and select the repository with your CV project.
-
-### 3. **Select directory**:
-
-Choose the `website/` directory as the root for your project.
-
-### 4. **Dependencies installation**:
-
-Vercel will automatically detect the dependencies from your `package.json` file.
-However, you may need to override the default command
-and add the `--legacy-peer-deps` flag to the build command to avoid dependency issues:
-
-```bash
-npm install --legacy-peer-deps
-```
+| Key | Description |
+|-----|-------------|
+| `technologyBlacklist` | Technologies to exclude from GitHub language auto-detection |
+| `showStargazersCount` | Show/hide star count on project cards |
+| `sortProjects` | Sort projects by `"name"` or `"stars"` |
 
 ---
 
 ## Customization
 
-### 1. **Edit Theme**
+### Theme colors
 
-Modify the theme colors in [website/src/styles/theme.css](./website/src/styles/theme.css)
-To do so, you can visit one of the listed websites in that file to generate a color palette.
+Edit the CSS variables in `src/styles/globals.css`. Use [ui.jln.dev](https://ui.jln.dev) or [realtimecolors.com](https://www.realtimecolors.com) to generate a palette.
 
-### 2. **Change Fonts**
+### Fonts
 
-Update the `fontFamily` in [website/tailwind.config.ts](./website/tailwind.config.ts)
-I recommend using [realtimecolors.com](https://real-time-colors.com/) for that purpose.
+Update `fontFamily` in `tailwind.config.ts` and the Google Fonts import in `src/styles/globals.css`:
 
 ```typescript
 fontFamily: {
-    heading: 'Your Custom Font For Headings',
-    body: 'Your Custom Font For Everything Else',
+    heading: ['"Your Heading Font"', 'sans-serif'],
+    body: ['Your Body Font', 'sans-serif'],
 }
 ```
 
-Ensure the font is imported in [theme.css](./website/src/styles/theme.css):
+---
 
-```css
-@import url("https://fonts.googleapis.com/css2?family=Your+Font&display=swap");
-```
+## Deployment (Vercel)
 
-### 3. **Modify Content**
-
-Update the content fetched from Sanity by visiting your Studio
+1. Push to GitHub and create a new Vercel project connected to the repository.
+2. Set **Root Directory** to `.` (repo root).
+3. No environment variables required.
 
 ---
 
