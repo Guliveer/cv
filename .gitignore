@@ -17,7 +17,15 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files
-.env*
+.env
+.env.*
+!.env.example
+
+# local overrides — never commit
+*.local
+*.local.*
+!*.example
+!*.example.*
 
 # vercel
 .vercel
@@ -26,9 +34,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# misc
-.DS_Store
-*.pem
-
 # testing
 /coverage
+
+# Claude Code
+.remember/
+.omc/
+
+# IDE
+.idea/
+
+# misc
+.DS_Store
+Thumbs.db
+desktop.ini
+*.pem
