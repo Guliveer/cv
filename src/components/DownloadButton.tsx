@@ -1,6 +1,6 @@
 "use client"
 
-import { Download } from "lucide-react"
+import { DownloadIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button"
 
 export default function DownloadButton() {
@@ -8,11 +8,11 @@ export default function DownloadButton() {
         <Button
             variant="outline"
             size="icon"
-            className="rounded-full"
+            className="rounded-none"
             onClick={() => window.open("/print", "_blank")}
             aria-label="Download CV as PDF"
         >
-            <Download className="h-[1.2rem] w-[1.2rem]" />
+            <DownloadIcon className="h-[1.2rem] w-[1.2rem]" />
         </Button>
     )
 }

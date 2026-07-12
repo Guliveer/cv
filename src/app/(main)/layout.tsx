@@ -22,7 +22,7 @@ export default function MainLayout({ children }: Readonly<{ children: React.Reac
             <head>
                 <meta name="theme-color" content="var(--primary)" />
             </head>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeProvider attribute="class" forcedTheme="dark" disableTransitionOnChange>
                 {children}
                 <Analytics />
             </ThemeProvider>

@@ -20,7 +20,7 @@
 html, body {
     background: #ffffff;
     color: #111827;
-    font-family: 'Karla', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
     font-size: 10.5pt;
     line-height: 1.55;
     -webkit-print-color-adjust: exact;
@@ -42,7 +42,7 @@ html, body {
     align-items: start;
     margin-bottom: 1.2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #00b4b4;
+    border-bottom: 2px solid #DFE104;
 }
 
 .cv-avatar {
@@ -88,7 +88,7 @@ html, body {
     width: 10px;
     height: 10px;
     flex-shrink: 0;
-    color: #00b4b4;
+    color: #DFE104;
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
@@ -135,9 +135,9 @@ html, body {
 }
 
 .cv-chip-accent {
-    border-color: #a7f3d0;
-    background: #f0fdf4;
-    color: #065f46;
+    border-color: #DFE104;
+    background: #fefce8;
+    color: #1a1a00;
 }
 
 .cv-lang-row {
@@ -173,7 +173,7 @@ html, body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #00b4b4;
+    color: #DFE104;
     margin-bottom: 0.5rem;
     padding-bottom: 0.22rem;
     border-bottom: 1px solid #e5e7eb;
@@ -276,7 +276,7 @@ html, body {
     font-size: 7pt;
     padding: 0 5px;
     border-radius: 999px;
-    background: #00b4b4;
+    background: #DFE104;
     color: #ffffff;
     font-weight: 700;
     line-height: 1.6;
@@ -298,7 +298,7 @@ html, body {
 .cv-project {
     border: 1px solid #e5e7eb;
     border-radius: 4px;
-    border-left: 2px solid #00b4b4;
+    border-left: 2px solid #DFE104;
     padding: 0.3rem 0.45rem;
     break-inside: avoid;
     display: grid;
@@ -340,7 +340,7 @@ html, body {
 
 .cv-project-url {
     font-size: 7pt;
-    color: #00b4b4;
+    color: #DFE104;
     text-decoration: none;
     white-space: nowrap;
     flex-shrink: 0;
