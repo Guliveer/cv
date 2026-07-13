@@ -8,10 +8,10 @@ export function Footer() {
         <footer className="print:hidden mt-32">
             <div className="border-t-2 border-border">
                 <Marquee speed={60} autoFill>
-                    <span className="text-[clamp(3rem,8vw,8rem)] font-heading font-bold uppercase tracking-tighter px-8 text-muted opacity-20">
+                    <span className="text-[clamp(3rem,8vw,8rem)] font-heading font-bold uppercase tracking-tighter px-8 text-muted-foreground opacity-40">
                         OLIWER PAWELSKI
                     </span>
-                    <span className="text-[clamp(3rem,8vw,8rem)] font-heading font-bold uppercase tracking-tighter px-8 text-muted opacity-20">
+                    <span className="text-[clamp(3rem,8vw,8rem)] font-heading font-bold uppercase tracking-tighter px-8 text-muted-foreground opacity-40">
                         ///
                     </span>
                 </Marquee>

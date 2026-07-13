@@ -2,6 +2,7 @@
 
 import Marquee from "react-fast-marquee"
 import { getExperience, getProjects, getProfile } from "@/lib/data"
+import AnimatedCounter from "./AnimatedCounter"
 
 export function StatsMarquee() {
     const experience = getExperience()
@@ -29,14 +30,7 @@ export function StatsMarquee() {
                 {stats.map((stat, i) => (
                     <div key={i} className="flex items-center gap-4 px-8">
                         {stat.label ? (
-                            <>
-                                <span className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter">
-                                    {stat.value}
-                                </span>
-                                <span className="text-sm md:text-lg uppercase tracking-widest opacity-70">
-                                    {stat.label}
-                                </span>
-                            </>
+                            <AnimatedCounter value={stat.value} label={stat.label} />
                         ) : (
                             <span className="text-4xl md:text-6xl font-bold font-heading uppercase tracking-tighter opacity-40">
                                 {stat.value}

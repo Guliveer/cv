@@ -11,5 +11,5 @@
         "PLpgSQL": "PostgreSQL"
     },
     "showStargazersCount": true,
-    "sortProjects": "name"
+    "sortProjects": "stars"
 }

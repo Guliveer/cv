@@ -107,6 +107,11 @@
     min-width: 0 !important;
 }
 
+.rfm-child > *,
+.rfm-child > * > * {
+    line-height: normal !important;
+}
+
 .rfm-overlay {
     display: none !important;
 }
@@ -115,4 +120,25 @@
     @apply border-y-2 border-border py-4;
 }
 
-/* Print is handled entirely by /print route */
+    /* Print is handled entirely by /print route */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(240 6% 3.9%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(64 90% 50.6%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(64 90% 40%);
+}
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(64 90% 50.6%) hsl(240 6% 3.9%);
+}

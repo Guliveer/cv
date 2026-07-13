@@ -30,15 +30,16 @@ export default async function ExperienceSection() {
             <SectionHeader title="Experience" />
 
             <div className="space-y-px bg-border">
-                {sortedExperiences.map((experience: any, index: number) => (
-                    <FadeUp key={index} delay={index * 0.05}>
-                            <div className={`group bg-background p-6 md:p-8 hover:bg-accent hover:text-accent-foreground transition-all duration-300${index > 0 && sortedExperiences[index - 1].company === experience.company ? " border-l-4 border-accent" : ""}`}>
+                {sortedExperiences.map((experience: any, index: number) => {
+                    const isFirstInGroup = index === 0 || sortedExperiences[index - 1].company !== experience.company
+
+                    return (
+                        <FadeUp key={index} delay={index * 0.05}>
+                            <div className="group bg-background p-6 md:p-8 hover:bg-accent hover:text-accent-foreground transition-all duration-300">
                             {/* Company header */}
-                            {index === 0 ||
-                            sortedExperiences[index - 1].company !==
-                                experience.company ? (
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className="bg-muted p-1.5 overflow-hidden">
+                            {isFirstInGroup && (
+                                <div className="flex items-center gap-3 mb-4 -mx-6 md:-mx-8 -mt-6 md:-mt-8 px-6 md:px-8 py-4 bg-accent text-accent-foreground">
+                                    <div className="bg-background p-1.5 overflow-hidden">
                                         {experience.companyLogo ? (
                                             <Image
                                                 src={experience.companyLogo}
@@ -58,7 +59,7 @@ export default async function ExperienceSection() {
                                                     href={experience.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-1.5 hover:text-accent-foreground"
+                                                    className="inline-flex items-center gap-1.5 hover:text-background"
                                                 >
                                                     <span>
                                                         {experience.company}
@@ -71,7 +72,7 @@ export default async function ExperienceSection() {
                                         </p>
                                         {experience.formerlyKnownAs?.length >
                                             0 && (
-                                            <p className="text-xs text-muted-foreground group-hover:text-accent-foreground/70 uppercase tracking-widest mt-0.5">
+                                            <p className="text-xs text-accent-foreground/70 uppercase tracking-widest mt-0.5">
                                                 FORMERLY{" "}
                                                 {experience.formerlyKnownAs.join(
                                                     " → "
@@ -80,7 +81,7 @@ export default async function ExperienceSection() {
                                         )}
                                     </div>
                                 </div>
-                            ) : null}
+                            )}
 
                             {/* Experience details */}
                             <div className="md:ml-10">
@@ -108,9 +109,10 @@ export default async function ExperienceSection() {
                                     </p>
                                 )}
                             </div>
-                        </div>
-                    </FadeUp>
-                ))}
+                            </div>
+                        </FadeUp>
+                    )
+                })}
             </div>
         </section>
     )

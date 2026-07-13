@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
+import TextScramble from "./TextScramble"
 
 interface SectionHeaderProps {
     title: string
@@ -12,7 +13,7 @@ export default function SectionHeader({ title }: SectionHeaderProps) {
     return (
         <div className="mb-12 pt-32">
             <h2 className="text-[clamp(2.5rem,8vw,6rem)] font-heading font-bold uppercase tracking-tighter leading-[0.8] relative inline-block">
-                {title}
+                <TextScramble text={title} />
                 <motion.span
                     className="absolute -bottom-2 left-0 h-1 bg-accent"
                     initial={{ width: 0 }}

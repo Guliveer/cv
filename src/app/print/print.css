@@ -1,5 +1,6 @@
 /* ─── Print CV stylesheet ───────────────────────────────────────────────────
-   Loaded ONLY by /print route — fully isolated from globals.css.
+   Brutalist print — matches main site aesthetic.
+   Sharp edges, heavy type, high contrast. Greyscale-safe.
    Zero Tailwind. Zero CSS variables. Zero dark mode.
    Every value is explicit so the output is predictable in every browser.
 ───────────────────────────────────────────────────────────────────────────── */
@@ -9,20 +10,21 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border-radius: 0 !important;
 }
 
 /* ── Page ── */
 @page {
     size: A4;
-    margin: 1.4cm 1.6cm;
+    margin: 1cm 1.2cm;
 }
 
 html, body {
     background: #ffffff;
     color: #111827;
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.55;
+    font-size: 10pt;
+    line-height: 1.5;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }
@@ -37,46 +39,49 @@ html, body {
 /* ── Header / Profile ── */
 .cv-header {
     display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: 1.4rem;
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
     align-items: start;
-    margin-bottom: 1.2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #DFE104;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid #111827;
 }
 
 .cv-avatar {
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border-radius: 0;
     object-fit: cover;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #111827;
     display: block;
 }
 
 .cv-name {
-    font-size: 19pt;
+    font-size: 20pt;
     font-weight: 700;
     color: #111827;
-    letter-spacing: -0.3px;
-    line-height: 1.15;
-    margin-bottom: 0.25rem;
+    letter-spacing: -0.5px;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
 }
 
 .cv-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.35rem 1.2rem;
+    gap: 0.25rem 1rem;
     margin-top: 0.35rem;
 }
 
 .cv-meta-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.28rem;
-    font-size: 8.5pt;
+    gap: 0.25rem;
+    font-size: 7.5pt;
     color: #4b5563;
     line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .cv-meta-item a {
@@ -85,59 +90,56 @@ html, body {
 }
 
 .cv-meta-icon {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     flex-shrink: 0;
-    color: #DFE104;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    /* prevent vertical jitter */
-    position: relative;
-    top: 0.5px;
+    color: #111827;
 }
 
 /* ── Bio ── */
 .cv-bio {
-    font-size: 9pt;
+    font-size: 8pt;
     color: #374151;
-    line-height: 1.6;
-    margin-top: 0.55rem;
+    line-height: 1.5;
+    margin-top: 0.4rem;
 }
 
 /* ── Skills / Languages ── */
 .cv-two-col {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0 2.5rem;
-    margin-bottom: 0.75rem;
+    gap: 0 2rem;
+    margin-bottom: 0.5rem;
     align-items: start;
 }
 
 .cv-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
-    margin-top: 0.3rem;
+    gap: 0.2rem;
+    margin-top: 0.25rem;
 }
 
 .cv-chip {
-    font-size: 7.5pt;
-    padding: 1px 6px;
-    border-radius: 999px;
-    border: 1px solid #d1d5db;
-    color: #374151;
+    font-size: 6.5pt;
+    padding: 1.5px 6px;
+    border-radius: 0;
+    border: 1.5px solid #111827;
+    color: #111827;
     white-space: nowrap;
-    background: #f9fafb;
-    line-height: 1.6;
+    background: transparent;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
 }
 
 .cv-chip-accent {
-    border-color: #DFE104;
-    background: #fefce8;
-    color: #1a1a00;
+    border-color: #d1d5db;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 5.5pt;
+    padding: 1px 4px;
 }
 
 .cv-lang-row {
@@ -145,9 +147,9 @@ html, body {
     justify-content: space-between;
     align-items: baseline;
     font-size: 9pt;
-    padding: 2.5px 0;
+    padding: 3px 0;
     color: #374151;
-    border-bottom: 1px solid #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .cv-lang-row:last-child {
@@ -155,38 +157,42 @@ html, body {
 }
 
 .cv-lang-name {
-    font-weight: 500;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .cv-lang-level {
-    font-size: 8pt;
-    color: #9ca3af;
+    font-size: 7.5pt;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* ── Section ── */
 .cv-section {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .cv-section-title {
-    font-size: 7.5pt;
+    font-size: 9pt;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #DFE104;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.22rem;
-    border-bottom: 1px solid #e5e7eb;
+    letter-spacing: 0.12em;
+    color: #111827;
+    margin-bottom: 0.35rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 1.5px solid #111827;
 }
 
 /* ── Experience / Education entries ── */
 .cv-entry {
     display: grid;
-    grid-template-columns: 1fr 7rem;
+    grid-template-columns: 1fr 6.5rem;
     grid-template-rows: auto auto;
-    column-gap: 0.75rem;
+    column-gap: 0.6rem;
     row-gap: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     break-inside: avoid;
     align-items: start;
 }
@@ -195,159 +201,174 @@ html, body {
     margin-bottom: 0;
 }
 
-/* Left col: company/school block */
 .cv-entry-left {
     grid-column: 1;
     grid-row: 1;
 }
 
-/* Right col: dates aligned to first line of company name */
 .cv-entry-dates {
     grid-column: 2;
     grid-row: 1;
-    font-size: 8pt;
+    font-size: 7pt;
     color: #6b7280;
     white-space: nowrap;
     text-align: right;
-    /* align baseline with company name (font-size 9.5pt → cap-height offset) */
-    padding-top: 2px;
-    line-height: 1.55;
+    padding-top: 1px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
-/* Description spans full width below */
 .cv-entry-desc {
     grid-column: 1 / -1;
     grid-row: 2;
-    font-size: 8pt;
-    color: #4b5563;
+    font-size: 7.5pt;
+    color: #374151;
     margin-top: 0.2rem;
-    line-height: 1.5;
+    line-height: 1.45;
     white-space: pre-line;
-    padding-left: 0.65rem;
-    border-left: 2px solid #e5e7eb;
+    padding-left: 0.5rem;
+    border-left: 2px solid #111827;
 }
 
 .cv-entry-company {
-    font-size: 9.5pt;
+    font-size: 8.5pt;
     font-weight: 700;
     color: #111827;
     display: inline;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .cv-entry-formerly {
-    font-size: 7.5pt;
-    color: #9ca3af;
-    margin-top: 0.1rem;
-    font-style: italic;
+    font-size: 6.5pt;
+    color: #6b7280;
+    margin-top: 0.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .cv-entry-position {
-    font-size: 9pt;
+    font-size: 8pt;
     font-weight: 500;
     color: #374151;
-    margin-top: 0.1rem;
+    margin-top: 0.05rem;
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .cv-entry-school {
-    font-size: 9.5pt;
+    font-size: 8.5pt;
     font-weight: 700;
     color: #111827;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .cv-entry-field {
-    font-size: 9pt;
+    font-size: 8pt;
     font-weight: 500;
     color: #374151;
-    margin-top: 0.1rem;
+    margin-top: 0.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .cv-entry-degree {
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: #6b7280;
-    margin-left: 0.4rem;
+    margin-left: 0.35rem;
     font-style: normal;
 }
 
 .cv-entry-badge-current {
     display: inline-block;
-    font-size: 7pt;
-    padding: 0 5px;
-    border-radius: 999px;
-    background: #DFE104;
+    font-size: 6pt;
+    padding: 1px 5px;
+    border-radius: 0;
+    background: #111827;
     color: #ffffff;
     font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.02em;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 /* ── Projects ── */
 .cv-projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.3rem;
-}
-
-/* Last project: if odd count, keep left-aligned not stretched */
-.cv-project:last-child:nth-child(odd) {
-    grid-column: 1;
+    gap: 0.25rem;
 }
 
 .cv-project {
-    border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    border-left: 2px solid #DFE104;
-    padding: 0.3rem 0.45rem;
+    border: 1.5px solid #111827;
+    border-radius: 0;
+    border-left: 3px solid #111827;
+    padding: 0.25rem 0.4rem;
     break-inside: avoid;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto auto;
-    column-gap: 0.4rem;
     align-items: start;
 }
 
+.cv-project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
 .cv-project-title {
-    grid-column: 1;
-    grid-row: 1;
-    font-size: 8.5pt;
+    font-size: 7.5pt;
     font-weight: 700;
     color: #111827;
-    line-height: 1.4;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .cv-project-stars {
-    grid-column: 2;
-    grid-row: 1;
-    font-size: 7pt;
-    color: #9ca3af;
+    font-size: 6.5pt;
+    color: #6b7280;
     white-space: nowrap;
-    padding-top: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
 }
 
-/* URL + desc: single line, row 2, full width */
+.cv-project-star-icon {
+    width: 9px;
+    height: 9px;
+    color: #6b7280;
+}
+
 .cv-project-meta {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: flex;
-    align-items: baseline;
-    gap: 0.35rem;
-    margin-top: 0.06rem;
-    overflow: hidden;
-    white-space: nowrap;
+    margin-top: 0.04rem;
 }
 
 .cv-project-url {
-    font-size: 7pt;
-    color: #DFE104;
+    font-size: 6pt;
+    color: #111827;
     text-decoration: none;
     white-space: nowrap;
-    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.cv-project-url-icon {
+    width: 8px;
+    height: 8px;
+    color: #6b7280;
 }
 
 .cv-project-desc {
-    font-size: 7.5pt;
+    font-size: 7pt;
     color: #6b7280;
     white-space: nowrap;
     overflow: hidden;
@@ -356,15 +377,12 @@ html, body {
 }
 
 .cv-project-chips {
-    grid-column: 1 / -1;
-    grid-row: 3;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.15rem;
-    margin-top: 0.2rem;
+    gap: 0.12rem;
+    margin-top: 0.15rem;
 }
 
-/* ── Screen preview (not printed) ── */
 @media screen {
     body {
         padding: 1.5rem;
@@ -373,9 +391,8 @@ html, body {
 
     .cv-page {
         background: white;
-        padding: 2cm;
+        padding: 1.5cm;
         box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-        border-radius: 4px;
         margin-bottom: 2rem;
     }
 }
@@ -389,7 +406,6 @@ html, body {
     .cv-page {
         padding: 0;
         box-shadow: none;
-        border-radius: 0;
     }
 
     .cv-section {

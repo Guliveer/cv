@@ -3,6 +3,9 @@ import { EnvelopeClosedIcon, SewingPinIcon, GitHubLogoIcon, LinkedInLogoIcon, Ex
 import Link from "next/link"
 import { getProfile } from "@/lib/data"
 import { FadeUp } from "./FadeUp"
+import StaggeredName from "./StaggeredName"
+import MagneticHover from "./MagneticHover"
+import { HeroWireframe } from "./ClientProviders"
 
 function formatDate(dateString: string, locale: string = "en-GB", short: boolean = true): string {
     const date = new Date(dateString)
@@ -21,8 +24,14 @@ export default async function ProfileSection() {
         birthday: raw.birthday ? formatDate(raw.birthday, "en-GB") : raw.birthday,
     }
 
+    const nameParts = profile.name.split(" ")
+    const firstName = nameParts[0] || ""
+    const lastName = nameParts.slice(1).join(" ") || ""
+
     return (
         <section className="min-h-screen flex flex-col justify-center px-4 md:px-8 py-20 relative">
+            <HeroWireframe />
+
             {/* Background decorative number */}
             <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-heading font-bold text-muted opacity-10 select-none pointer-events-none uppercase tracking-tighter"
@@ -58,19 +67,10 @@ export default async function ProfileSection() {
                 </FadeUp>
 
                 {/* Hero name + Avatar */}
-                <FadeUp delay={0.1}>
+                <StaggeredName firstName={firstName} lastName={lastName} />
+
+                <FadeUp>
                     <div className="flex flex-col md:flex-row md:items-end gap-6 md:gap-12 mb-12">
-                        <h1 className="text-[clamp(3rem,12vw,14rem)] font-heading font-bold uppercase leading-[0.8] tracking-tighter">
-                            {profile.name.split(" ").map((word, i) => (
-                                <span key={i} className="block">
-                                    {i === 1 ? (
-                                        <span className="text-accent">{word}</span>
-                                    ) : (
-                                        word
-                                    )}
-                                </span>
-                            ))}
-                        </h1>
                         <Avatar className="h-24 w-24 md:h-48 md:w-48 shrink-0 border-2 border-border overflow-hidden">
                             {profile.image ? (
                                 <AvatarImage
@@ -120,16 +120,17 @@ export default async function ProfileSection() {
                                             break
                                     }
                                     return (
-                                        <Link
-                                            key={index}
-                                            href={link.url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="group flex items-center gap-2 border-2 border-border px-4 py-2 text-sm uppercase tracking-wider hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all duration-200"
-                                        >
-                                            <Icon width={20} height={20} />
-                                            <span>{link.name}</span>
-                                        </Link>
+                                        <MagneticHover key={index} strength={0.2}>
+                                            <Link
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="group flex items-center gap-2 border-2 border-border px-4 py-2 text-sm uppercase tracking-wider hover:bg-accent hover:border-accent hover:text-accent-foreground transition-all duration-200"
+                                            >
+                                                <Icon width={20} height={20} />
+                                                <span>{link.name}</span>
+                                            </Link>
+                                        </MagneticHover>
                                     )
                                 })}
                             </div>

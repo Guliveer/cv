@@ -4,17 +4,17 @@ import ExperienceSection from "@/components/ExperienceSection"
 import EducationSection from "@/components/EducationSection"
 import ProjectsSection from "@/components/ProjectsSection"
 import { HeaderActions } from "@/components/HeaderActions"
-import { NoiseOverlay } from "@/components/NoiseOverlay"
 import { StatsMarquee } from "@/components/StatsMarquee"
 import { SkillsMarquee } from "@/components/SkillsMarquee"
 import { Footer } from "@/components/Footer"
+import { ClientProviders } from "@/components/ClientProviders"
 
 export const revalidate = 3600
 
 export default function Home() {
     return (
         <main className="min-h-screen bg-background relative overflow-hidden">
-            <NoiseOverlay />
+            <ClientProviders />
             <HeaderActions />
 
             <ProfileSection />

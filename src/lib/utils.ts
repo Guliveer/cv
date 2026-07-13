@@ -101,7 +101,7 @@ export async function enrichProjects(projects: any[], sortBy: string) {
     );
 
     if (sortBy === 'stars') {
-        return enrichedProjects.sort((a, b) => (b.stars || 0) - (a.stars || 0));
+        return enrichedProjects.sort((a, b) => (b.stars || 0) - (a.stars || 0) || a.title.localeCompare(b.title));
     }
     if (sortBy === 'name') {
         return enrichedProjects.sort((a, b) => a.title.localeCompare(b.title));
