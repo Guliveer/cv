@@ -5,7 +5,8 @@
     "birthday": "2003-05-01",
     "location": {
       "city": "Zielona Góra",
-      "country": "Poland"
+      "country": "Poland",
+      "url": "https://maps.app.goo.gl/gJcKF2vTVLDMQtSt6"
     },
     "bio": "My previous professional career was mainly focused on hardware, despite a much greater interest in software. On each of the covered ones I was considered conscientious and accurate, I often also performed various extracurricular work, and my efforts at Ekoenergetyka contributed to increasing the efficiency of the entire department.\nIn my work, I strive primarily to achieve the required goals and expand my knowledge of various fields and technologies.",
     "image": "https://avatars.githubusercontent.com/u/32310642?v=4",

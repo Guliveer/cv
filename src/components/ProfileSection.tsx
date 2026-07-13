@@ -41,27 +41,36 @@ export default async function ProfileSection() {
             </div>
 
             <div className="max-w-[95vw] mx-auto w-full relative z-10">
-                <FadeUp>
-                    {/* Top bar: location + email */}
+                <FadeUp className="relative z-20">
                     <div className="flex flex-wrap items-center gap-4 mb-8 text-sm md:text-base uppercase tracking-widest text-muted-foreground">
-                        {profile.location && (
+                        {profile.location && (profile.location.url ? (
+                            <Link
+                                href={profile.location.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 hover:text-accent transition-colors"
+                            >
+                                <SewingPinIcon width={14} height={14} />
+                                <span>
+                                    {profile.location.city}, {profile.location.country}
+                                </span>
+                            </Link>
+                        ) : (
                             <div className="flex items-center gap-2">
                                 <SewingPinIcon width={14} height={14} />
                                 <span>
                                     {profile.location.city}, {profile.location.country}
                                 </span>
                             </div>
-                        )}
+                        ))}
                         {profile.email && (
-                            <div className="flex items-center gap-2">
+                            <a
+                                href={`mailto:${profile.email}`}
+                                className="flex items-center gap-2 hover:text-accent transition-colors"
+                            >
                                 <EnvelopeClosedIcon width={14} height={14} />
-                                <a
-                                    href={`mailto:${profile.email}`}
-                                    className="hover:text-accent transition-colors"
-                                >
-                                    {profile.email}
-                                </a>
-                            </div>
+                                <span>{profile.email}</span>
+                            </a>
                         )}
                     </div>
                 </FadeUp>

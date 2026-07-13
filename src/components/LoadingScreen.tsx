@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import { animate, stagger, splitText } from "animejs"
+import cvData from "@/data/cv.json"
 
 interface LoadingScreenProps {
     onComplete: () => void
@@ -9,11 +10,17 @@ interface LoadingScreenProps {
 
 export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
     const containerRef = useRef<HTMLDivElement>(null)
+    const nameContainerRef = useRef<HTMLDivElement>(null)
     const firstNameRef = useRef<HTMLSpanElement>(null)
     const lastNameRef = useRef<HTMLSpanElement>(null)
+    const accentRef = useRef<HTMLSpanElement>(null)
     const [count, setCount] = useState(0)
     const phaseRef = useRef<"idle" | "counting" | "revealing" | "exiting">("idle")
     const animatedRef = useRef({ counter: false, reveal: false, exit: false })
+
+    const nameParts = cvData.profile.name.split(" ")
+    const firstName = nameParts[0] || ""
+    const lastName = nameParts.slice(1).join(" ") || ""
 
     useEffect(() => {
         if (animatedRef.current.counter) return
@@ -35,6 +42,19 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
                 if (elements.length === 0) {
                     triggerExit()
                     return
+                }
+
+                if (nameContainerRef.current) {
+                    nameContainerRef.current.style.visibility = "visible"
+                }
+
+                if (accentRef.current) {
+                    animate(accentRef.current, {
+                        opacity: [0, 1],
+                        scaleX: [0, 1],
+                        duration: 400,
+                        ease: "outExpo",
+                    })
                 }
 
                 let completed = 0
@@ -124,19 +144,19 @@ export default function LoadingScreen({ onComplete }: LoadingScreenProps) {
             </div>
 
             {/* Name - two separate lines with clear gap */}
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-2" style={{ visibility: "hidden" }} ref={nameContainerRef}>
                 <span
                     ref={firstNameRef}
                     className="block text-[clamp(2rem,6vw,5rem)] font-heading font-bold text-foreground uppercase tracking-tighter leading-none"
                 >
-                    OLIWER
+                    {firstName}
                 </span>
-                <span className="block w-12 h-1 bg-accent" />
+                <span ref={accentRef} className="block w-12 h-1 bg-accent" />
                 <span
                     ref={lastNameRef}
                     className="block text-[clamp(2rem,6vw,5rem)] font-heading font-bold text-accent uppercase tracking-tighter leading-none"
                 >
-                    PAWELSKI
+                    {lastName}
                 </span>
             </div>
         </div>

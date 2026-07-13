@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     keywords: ["CV", "Resume", "Portfolio", "Next.js", "Tailwind CSS", "shadcn", "React", "TypeScript"],
     authors: [{ name: "Oliwer Pawelski", url: "https://github.com/Guliveer" }],
     creator: "Oliwer Pawelski",
-    icons: "/favicon.svg",
+    icons: { icon: "/api/favicon" },
 }
 
 export default function MainLayout({ children }: Readonly<{ children: React.ReactNode }>) {
