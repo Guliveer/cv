@@ -53,7 +53,7 @@
       "position": "Software Engineer Intern",
       "startDate": "2025-07-01",
       "endDate": null,
-      "description": null
+      "description": "I work on the backend infrastructure powering ShipStation, a shipping management platform used by hundreds of thousands of e-commerce merchants worldwide to print shipping labels, schedule package pickups, and track shipments across dozens of carriers.\n\nI own end-to-end carrier integrations: building the code that translates requests from our platform into the exact formats and workflows required by each carrier, and handling everything that comes back. This includes building new integrations from scratch, troubleshooting production issues, and maintaining the shared API contract layer used across all carrier modules on the platform.\n\nKey contributions:\n\n- Resolved a critical issue that was blocking the entire pickup scheduling workflow for a major European carrier, affecting virtually all of the carrier\'s available services. The fix was implemented, tested, and verified end-to-end against the carrier\'s production environment.\n- Built a new carrier integration from the ground up, covering rate retrieval, label creation, pickup scheduling, and a real-time tracking event pipeline.\n- Redesigned the shared API validation logic for pickup/drop-off point (PUDO) support across all carrier modules.\n- Improved observability in the rating and billing layer, enabling the platform to identify which internal service originated each rate request."
     },
     {
       "company": "Zielona Góra Philharmonic",
